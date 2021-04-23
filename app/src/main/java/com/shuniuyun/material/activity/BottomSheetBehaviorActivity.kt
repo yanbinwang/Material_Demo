@@ -1,33 +1,26 @@
-package com.shuniuyun.material.activity;
+package com.shuniuyun.material.activity
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import androidx.annotation.Nullable;
-
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.shuniuyun.material.R;
+import android.os.Bundle
+import android.view.View
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.shuniuyun.material.R
 
 /**
  * author:wyb
  */
-public class BottomSheetBehaviorActivity extends BaseActivity implements View.OnClickListener {
-    private BottomSheetBehavior behavior;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottomsheetbehavior);
-        initView();
+class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
+    private var behavior: BottomSheetBehavior<*>? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_bottomsheetbehavior)
+        initView()
     }
 
-    private void initView() {
+    private fun initView() {
 //        // 拿到这个tab_layout对应的BottomSheetBehavior
 //        mBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.tab_layout));
-        View bottomSheet = findViewById(R.id.bottom_sheet);
-        behavior = BottomSheetBehavior.from(bottomSheet);
-        behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+        behavior = BottomSheetBehavior.from(findViewById(R.id.bottom_sheet))
+        behavior?.state = BottomSheetBehavior.STATE_HIDDEN
 
 //        mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
 //            @Override
@@ -42,12 +35,11 @@ public class BottomSheetBehaviorActivity extends BaseActivity implements View.On
 //        });
     }
 
-    @Override
-    public void onClick(View v) {
-        if (behavior.getState() == BottomSheetBehavior.STATE_HIDDEN) {
-            behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+    override fun onClick(v: View) {
+        if (behavior?.state == BottomSheetBehavior.STATE_HIDDEN) {
+            behavior?.setState(BottomSheetBehavior.STATE_EXPANDED)
         } else {
-            behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
+            behavior?.setState(BottomSheetBehavior.STATE_HIDDEN)
         }
     }
 }

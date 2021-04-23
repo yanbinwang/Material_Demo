@@ -29,10 +29,6 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.AppBarLayoutActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity
             android:name=".activity.AppBarLayoutDetailActivity"
             android:screenOrientation="portrait"/>
 

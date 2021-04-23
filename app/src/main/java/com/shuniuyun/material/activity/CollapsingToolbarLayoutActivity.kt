@@ -1,23 +1,17 @@
-package com.shuniuyun.material.activity;
+package com.shuniuyun.material.activity
 
-import android.os.Bundle;
-import android.view.WindowManager;
-
-import androidx.annotation.Nullable;
-
-import com.shuniuyun.material.R;
+import android.os.Bundle
+import android.view.WindowManager
+import com.shuniuyun.material.R
 
 /**
  * author:wyb
  */
-public class CollapsingToolbarLayoutActivity extends BaseActivity{
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+class CollapsingToolbarLayoutActivity : BaseActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
         //透明状态栏
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collapsingtoolbarlayout);
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_collapsingtoolbarlayout)
     }
-
 }

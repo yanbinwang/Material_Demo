@@ -1,47 +1,24 @@
-package com.shuniuyun.material.activity;
+package com.shuniuyun.material.activity
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import com.shuniuyun.material.R
 
-import com.shuniuyun.material.R;
-
-public class MainActivity extends BaseActivity implements View.OnClickListener {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+class MainActivity : BaseActivity(), View.OnClickListener {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
     }
 
-    @Override
-    public void onClick(View v) {
-        Intent intent;
-        switch (v.getId()){
-            case R.id.mBtn:
-                intent = new Intent(MainActivity.this, TabLayoutActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.mBtn2:
-                intent = new Intent(MainActivity.this, SnackBarActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.mBtn3:
-                intent = new Intent(MainActivity.this, AppBarLayoutActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.mBtn4:
-                intent = new Intent(MainActivity.this, CollapsingToolbarLayoutActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.mBtn5:
-                intent = new Intent(MainActivity.this, BottomSheetBehaviorActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.mBtn6:
-                intent = new Intent(MainActivity.this, BottomSheetDialogActivity.class);
-                startActivity(intent);
-                break;
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.mBtn -> startActivity(Intent(this@MainActivity, TabLayoutActivity::class.java))
+            R.id.mBtn2 -> startActivity(Intent(this@MainActivity, SnackBarActivity::class.java))
+            R.id.mBtn3 -> startActivity(Intent(this@MainActivity, AppBarLayoutActivity::class.java))
+            R.id.mBtn4 -> startActivity(Intent(this@MainActivity, CollapsingToolbarLayoutActivity::class.java))
+            R.id.mBtn5 -> startActivity(Intent(this@MainActivity, BottomSheetBehaviorActivity::class.java))
+            R.id.mBtn6 -> startActivity(Intent(this@MainActivity, BottomSheetDialogActivity::class.java))
         }
     }
 }
