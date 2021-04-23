@@ -4,19 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.shuniuyun.material.R
 
 /**
- * 如果需要翻页滚动且隐藏标题，根据网上做法，只有在布局外用NestedScrollVie（最外层父级）可使用
- * @author wyb
+ *  Created by wangyanbin
  */
-class AppBarLayoutFragment2 : Fragment() {
+class TabLayoutFragment2 : Fragment() {
     private var childView: View? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        childView = LayoutInflater.from(context).inflate(R.layout.fragment_appbarlayout2, container, false)
+        childView = LayoutInflater.from(context).inflate(R.layout.fragment_tablayout, container, false)
         return childView
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val test = childView?.findViewById<TextView>(R.id.test)
+        test?.text = "第2页"
     }
 
 }
