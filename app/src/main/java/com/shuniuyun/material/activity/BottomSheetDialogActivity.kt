@@ -38,7 +38,7 @@ class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (BottomSheetDialogHelper.isShowing()) BottomSheetDialogHelper.hidden() else BottomSheetDialogHelper.shown()
+        BottomSheetDialogHelper.shown()
 //        if (mBottomSheetDialog.isShowing) {
 //            mBottomSheetDialog.dismiss()
 //        } else mBottomSheetDialog.show()
