@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shuniuyun.material.R
 import com.shuniuyun.material.activity.AppBarLayoutDetailActivity
 import com.shuniuyun.material.adapter.TestAdapter
-import com.shuniuyun.material.bean.TestModel
+import com.shuniuyun.material.model.TestModel
 import java.util.*
 
 /**

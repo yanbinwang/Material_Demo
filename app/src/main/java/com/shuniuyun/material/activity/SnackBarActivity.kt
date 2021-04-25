@@ -9,13 +9,15 @@ import com.shuniuyun.material.R
  * author:wyb
  */
 class SnackBarActivity : BaseActivity(), View.OnClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_snack_bar)
     }
 
     override fun onClick(v: View) {
-        Snackbar.make(v, "FAB", Snackbar.LENGTH_LONG)
-            .setAction("cancel") { }.show()
+        Snackbar.make(v, "测试Snackbar", Snackbar.LENGTH_LONG)
+            .setAction("取消") { }.show()
     }
+
 }

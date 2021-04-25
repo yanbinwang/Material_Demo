@@ -11,9 +11,7 @@ import com.shuniuyun.material.fragment.AppBarLayoutFragment2
  */
 class AppBarLayoutPagerAdapter(fm: FragmentManager, private var tabNum: Int) : FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-    override fun getCount(): Int {
-        return tabNum
-    }
+    override fun getCount() = tabNum
 
     override fun getItem(position: Int): Fragment {
         return when (position) {

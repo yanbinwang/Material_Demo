@@ -22,27 +22,31 @@
 
         <activity
             android:name=".activity.TabLayoutActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.SnackBarActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.AppBarLayoutActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.AppBarLayoutDetailActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.CollapsingToolbarLayoutActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.BottomSheetBehaviorActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.BottomSheetDialogActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
 
     </application>
 

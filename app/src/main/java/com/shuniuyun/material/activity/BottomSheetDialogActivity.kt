@@ -1,59 +1,48 @@
-package com.shuniuyun.material.activity;
+package com.shuniuyun.material.activity
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.shuniuyun.material.R;
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetBehavior.BottomSheetCallback
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.shuniuyun.material.R
 
 /**
  * author:wyb
  */
-public class BottomSheetDialogActivity extends BaseActivity implements View.OnClickListener {
-    private BottomSheetDialog mBottomSheetDialog;
+class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
+    private val mBottomSheetDialog by lazy { BottomSheetDialog(this) }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottomsheetdialog);
-        createBottomSheetDialog();
-        setBehaviorCallback();
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_bottomsheetdialog)
+        initView()
+        initEvent()
     }
 
-    private void createBottomSheetDialog() {
-        mBottomSheetDialog = new BottomSheetDialog(this);
-        View view = LayoutInflater.from(this).inflate(R.layout.view_bottomsheetdialog, null, false);
-        mBottomSheetDialog.setContentView(view);
+    private fun initView(){
+        mBottomSheetDialog.setContentView(LayoutInflater.from(this).inflate(R.layout.view_bottomsheetdialog, null, false))
     }
 
-    private void setBehaviorCallback() {
-        View view = mBottomSheetDialog.getDelegate().findViewById(R.id.design_bottom_sheet);
-        final BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(view);
-        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
-
-            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+    private fun initEvent(){
+        val bottomSheetBehavior = BottomSheetBehavior.from(mBottomSheetDialog.delegate.findViewById(R.id.design_bottom_sheet)!!)
+        bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetCallback() {
+            override fun onStateChanged(bottomSheet: View, newState: Int) {
                 if (newState == BottomSheetBehavior.STATE_HIDDEN) {
-                    mBottomSheetDialog.dismiss();
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+                    mBottomSheetDialog.dismiss()
+                    bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
                 }
             }
 
-            public void onSlide(@NonNull View bottomSheet, float slideOffset) {}
-        });
+            override fun onSlide(bottomSheet: View, slideOffset: Float) {}
+        })
     }
 
-    @Override
-    public void onClick(View v) {
-        if (mBottomSheetDialog.isShowing()) {
-            mBottomSheetDialog.dismiss();
-        } else {
-            mBottomSheetDialog.show();
-        }
+    override fun onClick(v: View) {
+        if (mBottomSheetDialog.isShowing) {
+            mBottomSheetDialog.dismiss()
+        } else mBottomSheetDialog.show()
     }
 
 }

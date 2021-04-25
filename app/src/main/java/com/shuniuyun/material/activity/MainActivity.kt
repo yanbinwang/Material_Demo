@@ -6,6 +6,7 @@ import android.view.View
 import com.shuniuyun.material.R
 
 class MainActivity : BaseActivity(), View.OnClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -21,4 +22,5 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             R.id.mBtn6 -> startActivity(Intent(this@MainActivity, BottomSheetDialogActivity::class.java))
         }
     }
+
 }

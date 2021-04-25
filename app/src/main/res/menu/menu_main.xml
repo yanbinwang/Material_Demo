@@ -6,14 +6,14 @@
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="Settings"
+        android:title="设置"
         app:showAsAction="never" />
 
     <!-- 注意这个地方searchview的写法和actionbar的不同 如果用actionbar的写法会有很多错误 -->
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
-        android:title="search"
+        android:title="搜索"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/action_intent"
         android:actionProviderClass="com.shuniuyun.material.provider.MyActionProvider"
         android:icon="@android:drawable/ic_menu_share"
-        android:title="share"
+        android:title="分享"
         app:showAsAction="ifRoom"
         tools:ignore="AppCompatResource" />
 

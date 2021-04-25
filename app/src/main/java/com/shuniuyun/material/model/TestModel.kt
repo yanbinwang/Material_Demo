@@ -1,4 +1,4 @@
-package com.shuniuyun.material.bean
+package com.shuniuyun.material.model
 
 class TestModel(
     var title: String? = null,

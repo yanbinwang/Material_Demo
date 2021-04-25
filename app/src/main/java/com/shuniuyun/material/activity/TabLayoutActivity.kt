@@ -1,108 +1,91 @@
-package com.shuniuyun.material.activity;
+package com.shuniuyun.material.activity
 
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.Menu;
-import android.widget.Toast;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
-import androidx.viewpager.widget.ViewPager;
-
-import com.google.android.material.tabs.TabLayout;
-import com.shuniuyun.material.R;
-import com.shuniuyun.material.adapter.TabLayoutPagerAdapter;
-import com.shuniuyun.material.provider.MyActionProvider;
+import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.MenuItemCompat
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
+import com.shuniuyun.material.R
+import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
+import com.shuniuyun.material.provider.MyActionProvider
 
 /**
  * author:wyb
  */
-public class TabLayoutActivity extends BaseActivity {
-    private Toolbar toolbar;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
+class TabLayoutActivity : BaseActivity() {
+    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar) }
+    private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout) }
+    private val viewPager by lazy { findViewById<ViewPager>(R.id.viewpager) }
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tablayout);
-        initView();
-        initEvent();
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tablayout)
+        initView()
+        initEvent()
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 
-    private void initView() {
-        toolbar = findViewById(R.id.toolBar);
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewpager);
+    private fun initView() {
         //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
-        tabLayout.addTab(tabLayout.newTab().setText("菜单1"));
-        tabLayout.addTab(tabLayout.newTab().setText("菜单2"));
-        tabLayout.addTab(tabLayout.newTab().setText("菜单3"));
+        tabLayout.addTab(tabLayout.newTab().setText("菜单1"))
+        tabLayout.addTab(tabLayout.newTab().setText("菜单2"))
+        tabLayout.addTab(tabLayout.newTab().setText("菜单3"))
         //全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
         //未选中白色，选中灰色
-        tabLayout.setTabTextColors(Color.GRAY, Color.WHITE);
+        tabLayout.setTabTextColors(Color.GRAY, Color.WHITE)
         //选中底部线的颜色
-        tabLayout.setSelectedTabIndicatorColor(Color.RED);
+        tabLayout.setSelectedTabIndicatorColor(Color.RED)
         //选中底部线的高度
-        tabLayout.setSelectedTabIndicatorHeight(5);
-        TabLayoutPagerAdapter adapter = new TabLayoutPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
-        viewPager.setAdapter(adapter);
+        tabLayout.setSelectedTabIndicatorHeight(5)
+        val adapter = TabLayoutPagerAdapter(supportFragmentManager, tabLayout.tabCount)
+        viewPager.adapter = adapter
     }
 
-    public void initEvent() {
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));//建立关联
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
+    private fun initEvent() {
+        viewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout)) //建立关联
+        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab) {
+                viewPager.currentItem = tab.position
             }
 
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-        toolbar.setTitle("顶部ToolBar标题");//标题
-
-        setSupportActionBar(toolbar);//建立关联，需要更改styles文件以及继承AppCompatActivity
+            override fun onTabUnselected(tab: TabLayout.Tab) {}
+            override fun onTabReselected(tab: TabLayout.Tab) {}
+        })
+        toolbar.title = "顶部ToolBar标题" //标题
+        setSupportActionBar(toolbar) //建立关联，需要更改styles文件以及继承AppCompatActivity
         // 有些语句得写在setSupportActionBar 之后才有效果
-        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert);//左侧图片
-        toolbar.setNavigationOnClickListener(v -> {
-            Toast.makeText(getApplicationContext(), "点击了左侧按钮", Toast.LENGTH_LONG).show();
-            finish();
-        });
+        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert) //左侧图片
+        toolbar.setNavigationOnClickListener {
+            Toast.makeText(applicationContext, "点击了左侧按钮", Toast.LENGTH_LONG).show()
+            finish()
+        }
         //自定义菜单的按钮点击事件
-        toolbar.setOnMenuItemClickListener(menuItem -> {
-            int id = menuItem.getItemId();
-            String msg = "";
-            switch (id) {
-                case R.id.action_search:
-                    msg = "点击了右侧正数第一个action_search";
-                    break;
-                case R.id.action_intent:
-                    msg = "点击了右侧正数第二个action_intent";
-                    // 这个地方要注意使用这种方式增加actionprovider不然会报错
-                    MenuItemCompat.setActionProvider(menuItem, new MyActionProvider(this));
-                    //该类加入了2个新的按钮会通过点击show出来
-                    break;
-                default:
-                    break;
-
+        toolbar.setOnMenuItemClickListener { menuItem: MenuItem ->
+            var msg = ""
+            when (menuItem.itemId) {
+                R.id.action_search -> msg = "点击了右侧正数第一个action_search"
+                R.id.action_intent -> {
+                    msg = "点击了右侧正数第二个action_intent"
+                    //这个地方要注意使用这种方式增加actionprovider不然会报错
+                    MenuItemCompat.setActionProvider(menuItem, MyActionProvider(this))
+                }
             }
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-            return false;
-        });
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+            false
+        }
     }
 
 }
