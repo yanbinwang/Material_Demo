@@ -36,9 +36,7 @@ class RotateBehavior : CoordinatorLayout.Behavior<FloatingActionButton> {
         val z = dependencies.size
         while (i < z) {
             val view = dependencies[i]
-            if (view is SnackbarLayout && parent.doViewsOverlap(fab, view)) {
-                minOffset = minOffset.coerceAtMost(view.getTranslationY() - view.getHeight())
-            }
+            if (view is SnackbarLayout && parent.doViewsOverlap(fab, view)) minOffset = minOffset.coerceAtMost(view.getTranslationY() - view.getHeight())
             i++
         }
         return minOffset

@@ -29,7 +29,6 @@ class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 //bottomSheet状态的改变，根据slideOffset可以做一些动画
             }
-
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
                 //拖拽中的回调，根据slideOffset可以做一些动画
             }

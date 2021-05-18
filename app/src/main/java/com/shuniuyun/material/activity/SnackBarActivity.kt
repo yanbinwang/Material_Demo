@@ -16,8 +16,7 @@ class SnackBarActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        Snackbar.make(v, "测试Snackbar", Snackbar.LENGTH_LONG)
-            .setAction("取消") { }.show()
+        Snackbar.make(v, "测试Snackbar", Snackbar.LENGTH_LONG).setAction("取消") { }.show()
     }
 
 }

@@ -35,10 +35,9 @@ class AppBarLayoutFragment : Fragment() {
         for (i in 0..19) {
             mData.add(TestModel("标题$i", "简介$i"))
         }
-        val mRecycler: RecyclerView = view!!.findViewById(R.id.mList)
+        val mRecycler = childView?.findViewById(R.id.mList) as RecyclerView
         mRecycler.setHasFixedSize(true)
-        val manager = GridLayoutManager(context, 1) //设置一行设定是2个占位
-        mRecycler.layoutManager = manager
+        mRecycler.layoutManager = GridLayoutManager(context, 1) //设置一行设定是2个占位
         //说是如果item的高度固定不变，设置这个属性能提高性能，RecyclerView保持固定的大小
         val mAdapter = TestAdapter(mData)
         mAdapter.itemOnClickListener = View.OnClickListener { v: View? ->

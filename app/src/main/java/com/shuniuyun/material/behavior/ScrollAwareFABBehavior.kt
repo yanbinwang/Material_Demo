@@ -38,11 +38,9 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
                 override fun onAnimationStart(view: View) {
                     mIsAnimatingOut = true
                 }
-
                 override fun onAnimationCancel(view: View) {
                     mIsAnimatingOut = false
                 }
-
                 override fun onAnimationEnd(view: View) {
                     mIsAnimatingOut = false
                     view.visibility = View.INVISIBLE
@@ -60,9 +58,7 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
     private fun getMarginBottom(v: View): Int {
         var marginBottom = 0
         val layoutParams = v.layoutParams
-        if (layoutParams is MarginLayoutParams) {
-            marginBottom = layoutParams.bottomMargin
-        }
+        if (layoutParams is MarginLayoutParams) marginBottom = layoutParams.bottomMargin
         return marginBottom
     }
 

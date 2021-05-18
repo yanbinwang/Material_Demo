@@ -1,11 +1,9 @@
 package com.shuniuyun.material.activity
 
 import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
@@ -32,12 +30,13 @@ class TabLayoutActivity : BaseActivity() {
         initEvent()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
     private fun initView() {
+        //标题
+        toolbar.title = "顶部ToolBar标题"
+        //建立关联，需要更改styles文件以及继承AppCompatActivity
+        setSupportActionBar(toolbar)
+        //有些语句得写在setSupportActionBar 之后才有效果
+        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert) //左侧图片
         //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
         tabLayout.addTab(tabLayout.newTab().setText("菜单1"))
         tabLayout.addTab(tabLayout.newTab().setText("菜单2"))
@@ -55,19 +54,15 @@ class TabLayoutActivity : BaseActivity() {
     }
 
     private fun initEvent() {
-        viewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout)) //建立关联
+        //建立关联
+        viewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout))
         tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewPager.currentItem = tab.position
             }
-
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
-        toolbar.title = "顶部ToolBar标题" //标题
-        setSupportActionBar(toolbar) //建立关联，需要更改styles文件以及继承AppCompatActivity
-        // 有些语句得写在setSupportActionBar 之后才有效果
-        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert) //左侧图片
         toolbar.setNavigationOnClickListener {
             Toast.makeText(applicationContext, "点击了左侧按钮", Toast.LENGTH_LONG).show()
             finish()
@@ -86,6 +81,11 @@ class TabLayoutActivity : BaseActivity() {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             false
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 
 }

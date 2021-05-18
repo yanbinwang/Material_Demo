@@ -48,7 +48,6 @@ class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
                 override fun onAnimationStart(animation: Animator) {
                     view.visibility = View.VISIBLE
                 }
-
                 override fun onAnimationEnd(animation: Animator) {}
             })
     }
@@ -68,15 +67,11 @@ class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
                     view.visibility = View.VISIBLE
                     mCancelled = false
                 }
-
                 override fun onAnimationCancel(animation: Animator) {
                     mCancelled = true
                 }
-
                 override fun onAnimationEnd(animation: Animator) {
-                    if (!mCancelled) {
-                        view.visibility = View.INVISIBLE
-                    }
+                    if (!mCancelled) view.visibility = View.INVISIBLE
                 }
             })
     }
