@@ -34,11 +34,11 @@ object BottomSheetDialogHelper {
 
     fun isShowing() = sheetDialog?.isShowing ?: false
 
-    fun shown() {
+    fun show() {
         if (!isShowing()) sheetDialog?.show()
     }
 
-    fun hidden() {
+    fun dismiss() {
         if (isShowing()) sheetDialog?.dismiss()
     }
 

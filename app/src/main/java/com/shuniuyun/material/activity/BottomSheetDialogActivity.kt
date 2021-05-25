@@ -21,7 +21,7 @@ class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        BottomSheetDialogHelper.shown()
+        BottomSheetDialogHelper.show()
     }
 
 }

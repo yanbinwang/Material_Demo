@@ -34,46 +34,50 @@ class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
 
     //显示的动画
     private fun show(view: View) {
-        view.animate().cancel()
-        view.alpha = 0f
-        view.scaleY = 0f
-        view.scaleX = 0f
-        view.animate()
-            .scaleX(1f)
-            .scaleY(1f)
-            .alpha(1f)
-            .setDuration(200)
-            .setInterpolator(LinearOutSlowInInterpolator())
-            .setListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationStart(animation: Animator) {
-                    view.visibility = View.VISIBLE
-                }
-                override fun onAnimationEnd(animation: Animator) {}
-            })
+        view.apply {
+            animate().cancel()
+            alpha = 0f
+            scaleY = 0f
+            scaleX = 0f
+            animate()
+                .scaleX(1f)
+                .scaleY(1f)
+                .alpha(1f)
+                .setDuration(200)
+                .setInterpolator(LinearOutSlowInInterpolator())
+                .setListener(object : AnimatorListenerAdapter() {
+                    override fun onAnimationStart(animation: Animator) {
+                        visibility = View.VISIBLE
+                    }
+                    override fun onAnimationEnd(animation: Animator) {}
+                })
+        }
     }
 
     //隐藏的动画
     private fun hide(view: View) {
-        view.animate().cancel()
-        view.animate()
-            .scaleX(0f)
-            .scaleY(0f)
-            .alpha(0f)
-            .setDuration(200)
-            .setInterpolator(FastOutLinearInInterpolator())
-            .setListener(object : AnimatorListenerAdapter() {
-                private var mCancelled = false
-                override fun onAnimationStart(animation: Animator) {
-                    view.visibility = View.VISIBLE
-                    mCancelled = false
-                }
-                override fun onAnimationCancel(animation: Animator) {
-                    mCancelled = true
-                }
-                override fun onAnimationEnd(animation: Animator) {
-                    if (!mCancelled) view.visibility = View.INVISIBLE
-                }
-            })
+        view.apply {
+            animate().cancel()
+            animate()
+                .scaleX(0f)
+                .scaleY(0f)
+                .alpha(0f)
+                .setDuration(200)
+                .setInterpolator(FastOutLinearInInterpolator())
+                .setListener(object : AnimatorListenerAdapter() {
+                    private var mCancelled = false
+                    override fun onAnimationStart(animation: Animator) {
+                        visibility = View.VISIBLE
+                        mCancelled = false
+                    }
+                    override fun onAnimationCancel(animation: Animator) {
+                        mCancelled = true
+                    }
+                    override fun onAnimationEnd(animation: Animator) {
+                        if (!mCancelled) visibility = View.INVISIBLE
+                    }
+                })
+        }
     }
 
 }

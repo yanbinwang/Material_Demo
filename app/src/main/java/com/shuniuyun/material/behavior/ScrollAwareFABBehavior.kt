@@ -51,7 +51,8 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
     private fun animateIn(button: FloatingActionButton) {
         button.visibility = View.VISIBLE
         ViewCompat.animate(button).translationY(0f)
-            .setInterpolator(INTERPOLATOR).withLayer().setListener(null)
+            .setInterpolator(INTERPOLATOR).withLayer()
+            .setListener(null)
             .start()
     }
 

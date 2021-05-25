@@ -1,5 +1,6 @@
 <resources>
 
+    <!-- 全局app样式 -->
     <style name="AppTheme" parent="AppTheme.Base" />
 
     <style name="AppTheme.Base" parent="Theme.AppCompat">
@@ -8,15 +9,15 @@
         <!-- 设置页面切换动画 -->
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
         <!--        &lt;!&ndash; Appbar背景色 &ndash;&gt;-->
-        <!--        <item name="colorPrimary">@android:color/transparent</item>-->
+        <!--        <item name="colorPrimary">@color/black</item>-->
         <!-- 导航栏颜色 -->
-        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorPrimaryDark">@color/black</item>
         <!-- 底部导航栏颜色 -->
         <item name="android:navigationBarColor">@color/black</item>
         <!-- 页面背景色 -->
         <item name="android:windowBackground">@color/gray_f6f8ff</item>
         <!-- 控件被选中时的颜色 -->
-        <item name="colorAccent">@color/purple_8f94fb</item>
+        <item name="colorAccent">@color/blue_2e60df</item>
         <!-- 控制控件的默认颜色 -->
         <item name="colorControlNormal">@color/grey_333333</item>
         <!-- 剔除控件的点击效果 -->

@@ -6,14 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.MenuItemCompat
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
-import com.shuniuyun.material.provider.MyActionProvider
 
 /**
  * author:wyb
@@ -45,10 +43,11 @@ class TabLayoutActivity : BaseActivity() {
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
         //未选中白色，选中灰色
         tabLayout.setTabTextColors(Color.GRAY, Color.WHITE)
-        //选中底部线的颜色
-        tabLayout.setSelectedTabIndicatorColor(Color.RED)
-        //选中底部线的高度
-        tabLayout.setSelectedTabIndicatorHeight(5)
+        //使用app:tabIndicator="@drawable/layer_tab_line"替代
+//        //选中底部线的颜色
+//        tabLayout.setSelectedTabIndicatorColor(Color.RED)
+//        //选中底部线的高度
+//        tabLayout.setSelectedTabIndicatorHeight(5)
         val adapter = TabLayoutPagerAdapter(supportFragmentManager, tabLayout.tabCount)
         viewPager.adapter = adapter
     }
@@ -60,25 +59,24 @@ class TabLayoutActivity : BaseActivity() {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 viewPager.currentItem = tab.position
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
         toolbar.setNavigationOnClickListener {
-            Toast.makeText(applicationContext, "点击了左侧按钮", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "返回-关闭页面", Toast.LENGTH_LONG).show()
             finish()
         }
         //自定义菜单的按钮点击事件
         toolbar.setOnMenuItemClickListener { menuItem: MenuItem ->
-            var msg = ""
             when (menuItem.itemId) {
-                R.id.action_search -> msg = "点击了右侧正数第一个action_search"
-                R.id.action_intent -> {
-                    msg = "点击了右侧正数第二个action_intent"
-                    //这个地方要注意使用这种方式增加actionprovider不然会报错
-                    MenuItemCompat.setActionProvider(menuItem, MyActionProvider(this))
-                }
+                //设置了actionViewClass为SearchView后，点击事件不生效
+//                R.id.action_search -> Toast.makeText(this, "点击搜索按钮", Toast.LENGTH_SHORT).show()
+                //点击分享按钮，弹出自定义二级菜单
+                R.id.action_intent -> Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show()
+                //设置被叠在了3个点当中
+                R.id.action_settings -> Toast.makeText(this, "点击设置按钮", Toast.LENGTH_SHORT).show()
             }
-            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
             false
         }
     }

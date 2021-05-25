@@ -12,8 +12,9 @@ import com.shuniuyun.material.R
  *  Created by wangyanbin
  */
 class MyActionProvider(context: Context) : ActionProvider(context) {
-    override fun onCreateActionView(): View {
-        return View(context)
+
+    override fun onCreateActionView(): View? {
+        return null
     }
 
     override fun hasSubMenu(): Boolean {
@@ -22,22 +23,18 @@ class MyActionProvider(context: Context) : ActionProvider(context) {
 
     //show出的2个小标签设置图片
     override fun onPrepareSubMenu(subMenu: SubMenu?) {
-        Log.v("burning", "onPrepareSubMenu")
+        Log.v("MyActionProvider", "onPrepareSubMenu")
+        //清空之前的配置
         subMenu?.clear()
-        subMenu?.add("sub item1")
-            ?.setIcon(R.mipmap.ic_launcher)
-            ?.setOnMenuItemClickListener {
-                Toast.makeText(context, "item1", Toast.LENGTH_SHORT).show()
+        //添加两个子菜单
+        subMenu?.add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+                Toast.makeText(context, "微信点击", Toast.LENGTH_SHORT).show()
                 false
-            }
-
-        subMenu?.add("sub item2")
-            ?.setIcon(R.mipmap.ic_launcher)
-            ?.setOnMenuItemClickListener {
-                Toast.makeText(context, "item2", Toast.LENGTH_SHORT).show()
+        }
+        subMenu?.add("微博")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+                Toast.makeText(context, "微博点击", Toast.LENGTH_SHORT).show()
                 false
-            }
-        super.onPrepareSubMenu(subMenu)
+        }
     }
 
 }
