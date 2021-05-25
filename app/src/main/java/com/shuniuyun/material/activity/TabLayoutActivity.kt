@@ -29,25 +29,21 @@ class TabLayoutActivity : BaseActivity() {
     }
 
     private fun initView() {
-        //标题
-        toolbar.title = "顶部ToolBar标题"
-        //建立关联，需要更改styles文件以及继承AppCompatActivity
-        setSupportActionBar(toolbar)
-        //有些语句得写在setSupportActionBar 之后才有效果
-        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert) //左侧图片
-        //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
-        tabLayout.addTab(tabLayout.newTab().setText("菜单1"))
-        tabLayout.addTab(tabLayout.newTab().setText("菜单2"))
-        tabLayout.addTab(tabLayout.newTab().setText("菜单3"))
-        //全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
-        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
-        //未选中白色，选中灰色
-        tabLayout.setTabTextColors(Color.GRAY, Color.WHITE)
-        //使用app:tabIndicator="@drawable/layer_tab_line"替代
-//        //选中底部线的颜色
-//        tabLayout.setSelectedTabIndicatorColor(Color.RED)
-//        //选中底部线的高度
-//        tabLayout.setSelectedTabIndicatorHeight(5)
+        toolbar.apply {
+            title = "顶部ToolBar标题"//标题
+            setNavigationIcon(android.R.drawable.ic_menu_revert)//左侧图片
+            setSupportActionBar(toolbar)
+        }
+        tabLayout.apply {
+            //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
+            addTab(newTab().setText("菜单1"))
+            addTab(newTab().setText("菜单2"))
+            addTab(newTab().setText("菜单3"))
+            tabGravity = TabLayout.GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
+            setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
+            setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
+//          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
+        }
         val adapter = TabLayoutPagerAdapter(supportFragmentManager, tabLayout.tabCount)
         viewPager.adapter = adapter
     }
