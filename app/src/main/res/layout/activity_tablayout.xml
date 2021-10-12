@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/toolBar"
         android:background="?attr/colorPrimary"
+        app:tabBackground="@android:color/transparent"
+        app:tabRippleColor="@android:color/transparent"
         app:tabIndicator="@drawable/layer_tab_line"
         app:tabIndicatorFullWidth="false" />
 

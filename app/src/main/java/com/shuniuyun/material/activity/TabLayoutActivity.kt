@@ -13,8 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
+import com.google.android.material.tabs.TabLayout.*
 import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
@@ -47,13 +46,14 @@ class TabLayoutActivity : BaseActivity() {
 //            addTab(newTab().setText("菜单1"))
 //            addTab(newTab().setText("菜单2"))
 //            addTab(newTab().setText("菜单3"))
-            tabGravity = TabLayout.GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
+            tabGravity = GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
             setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
             setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
 //          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
         }
         val adapter = TabLayoutPagerAdapter(this)
         viewPager.adapter = adapter
+        viewPager.getChildAt(0).overScrollMode = OVER_SCROLL_NEVER
     }
 
     private fun initEvent() {
