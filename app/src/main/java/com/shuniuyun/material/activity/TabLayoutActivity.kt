@@ -61,7 +61,7 @@ class TabLayoutActivity : BaseActivity() {
         val tabTitle = listOf("菜单1","菜单2","菜单3")
         TabLayoutMediator(tabLayout,viewPager,true) { tab, position -> tab.text = tabTitle[position] }.attach()
         toolbar.setNavigationOnClickListener {
-            Toast.makeText(applicationContext, "返回-关闭页面", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "点击关闭按钮", Toast.LENGTH_LONG).show()
             finish()
         }
         //自定义菜单的按钮点击事件
