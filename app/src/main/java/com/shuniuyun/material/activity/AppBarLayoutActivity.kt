@@ -6,12 +6,12 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener
+import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.AppBarLayoutPagerAdapter
+import java.util.*
 
 /**
  *  Created by wangyanbin
@@ -19,7 +19,7 @@ import com.shuniuyun.material.adapter.AppBarLayoutPagerAdapter
 class AppBarLayoutActivity : BaseActivity() {
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar); }
     private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout); }
-    private val viewPager by lazy { findViewById<ViewPager>(R.id.viewpager); }
+    private val viewPager by lazy { findViewById<ViewPager2>(R.id.viewpager); }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,28 +35,21 @@ class AppBarLayoutActivity : BaseActivity() {
             setSupportActionBar(toolbar)
         }
         tabLayout.apply {
-            //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
-            addTab(newTab().setText("菜单1---适配器应用"))
-            addTab(newTab().setText("菜单2---可折叠菜单"))
+//            //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
+//            addTab(newTab().setText("菜单1---适配器应用"))
+//            addTab(newTab().setText("菜单2---可折叠菜单"))
             tabGravity = TabLayout.GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
             setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
             setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
 //          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
         }
-        val adapter = AppBarLayoutPagerAdapter(supportFragmentManager, tabLayout.tabCount)
-        viewPager.adapter = adapter
+        viewPager.adapter = AppBarLayoutPagerAdapter(this)
     }
 
     private fun initEvent() {
         //建立关联
-        viewPager.addOnPageChangeListener(TabLayoutOnPageChangeListener(tabLayout))
-        tabLayout.addOnTabSelectedListener(object : OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                viewPager.currentItem = tab.position
-            }
-            override fun onTabUnselected(tab: TabLayout.Tab) {}
-            override fun onTabReselected(tab: TabLayout.Tab) {}
-        })
+        val tabTitle = listOf("菜单1---适配器应用","菜单2---可折叠菜单")
+        TabLayoutMediator(tabLayout,viewPager,true) { tab, position -> tab.text = tabTitle[position] }.attach()
         toolbar.setNavigationOnClickListener {
             Toast.makeText(applicationContext, "返回-关闭页面", Toast.LENGTH_LONG).show()
             finish()

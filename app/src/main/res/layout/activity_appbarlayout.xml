@@ -39,7 +39,7 @@
 		2. 给需要滑动的组件设置 app:layout_scrollFlags=”scroll|enterAlways” 属性。
 		3. 给滑动的组件设置app:layout_behavior属性
     -->
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
