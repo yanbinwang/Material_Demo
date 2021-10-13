@@ -22,20 +22,19 @@ import java.util.*
  * @author wyb
  */
 class AppBarLayoutFragment : Fragment() {
-    private var childView: View? = null
     private val mData by lazy { ArrayList<TestModel>() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        childView = LayoutInflater.from(context).inflate(R.layout.fragment_appbarlayout, container, false)
-        return childView
+        return LayoutInflater.from(context)
+            .inflate(R.layout.fragment_appbarlayout, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         for (i in 0..19) {
             mData.add(TestModel("标题$i", "简介$i"))
         }
-        val mRecycler = childView?.findViewById(R.id.mList) as RecyclerView
+        val mRecycler = view.findViewById(R.id.mList) as RecyclerView
         mRecycler.setHasFixedSize(true)
         mRecycler.layoutManager = GridLayoutManager(context, 1) //设置一行设定是2个占位
         //说是如果item的高度固定不变，设置这个属性能提高性能，RecyclerView保持固定的大小
@@ -51,5 +50,27 @@ class AppBarLayoutFragment : Fragment() {
         }
         mRecycler.adapter = mAdapter
     }
+
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//        for (i in 0..19) {
+//            mData.add(TestModel("标题$i", "简介$i"))
+//        }
+//        val mRecycler = childView?.findViewById(R.id.mList) as RecyclerView
+//        mRecycler.setHasFixedSize(true)
+//        mRecycler.layoutManager = GridLayoutManager(context, 1) //设置一行设定是2个占位
+//        //说是如果item的高度固定不变，设置这个属性能提高性能，RecyclerView保持固定的大小
+//        val mAdapter = TestAdapter(mData)
+//        mAdapter.itemOnClickListener = View.OnClickListener { v: View? ->
+////            int position = Integer.parseInt(v.getTag().toString());
+//            val intent = Intent(context, AppBarLayoutDetailActivity::class.java)
+//            if (v is ImageView) {
+//                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(context as Activity?, v, "mItem").toBundle())
+//            } else {
+//                startActivity(intent)
+//            }
+//        }
+//        mRecycler.adapter = mAdapter
+//    }
 
 }

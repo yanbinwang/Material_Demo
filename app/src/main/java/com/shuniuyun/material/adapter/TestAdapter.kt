@@ -19,12 +19,14 @@ class TestAdapter(private var mData: MutableList<TestModel>) : RecyclerView.Adap
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_test, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvItemTitle.text = mData[position].title
-        holder.tvItemDes.text = mData[position].des
-        holder.ivItemPic.tag = position.toString()
-        holder.ivItemPic.setOnClickListener(itemOnClickListener)
-        holder.llContainer.tag = position.toString()
-        holder.llContainer.setOnClickListener(itemOnClickListener)
+        holder.apply {
+            tvItemTitle.text = mData[position].title
+            tvItemDes.text = mData[position].des
+            ivItemPic.tag = position.toString()
+            ivItemPic.setOnClickListener(itemOnClickListener)
+            llContainer.tag = position.toString()
+            llContainer.setOnClickListener(itemOnClickListener)
+        }
     }
 
     override fun getItemCount() = mData.size

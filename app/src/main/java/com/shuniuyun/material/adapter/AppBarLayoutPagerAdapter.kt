@@ -9,7 +9,7 @@ import com.shuniuyun.material.fragment.AppBarLayoutFragment2
 /**
  *  Created by wangyanbin
  */
-class AppBarLayoutPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+class AppBarLayoutPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount() = 2
 

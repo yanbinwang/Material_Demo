@@ -10,7 +10,7 @@ import com.shuniuyun.material.fragment.TabLayoutFragment3
 /**
  *  Created by wangyanbin
  */
-class TabLayoutPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+class TabLayoutPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount() = 3
 

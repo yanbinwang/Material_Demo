@@ -12,11 +12,9 @@ import com.shuniuyun.material.R
  * @author wyb
  */
 class AppBarLayoutFragment2 : Fragment() {
-    private var childView: View? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        childView = LayoutInflater.from(context).inflate(R.layout.fragment_appbarlayout2, container, false)
-        return childView
+        return LayoutInflater.from(context).inflate(R.layout.fragment_appbarlayout2, container, false)
     }
 
 }

@@ -22,7 +22,7 @@ class RotateBehavior : CoordinatorLayout.Behavior<FloatingActionButton> {
     }
 
     override fun onDependentViewChanged(parent: CoordinatorLayout, child: FloatingActionButton, dependency: View): Boolean {
-        val translationY: Float = getFabTranslationYForSnackBar(parent, child)
+        val translationY = getFabTranslationYForSnackBar(parent, child)
         val percentComplete = -translationY / dependency.height
         child.rotation = -90 * percentComplete
         child.translationY = translationY

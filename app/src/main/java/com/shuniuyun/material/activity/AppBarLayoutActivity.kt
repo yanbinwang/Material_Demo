@@ -11,7 +11,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.AppBarLayoutPagerAdapter
-import java.util.*
 
 /**
  *  Created by wangyanbin
