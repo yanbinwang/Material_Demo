@@ -17,6 +17,7 @@ import com.google.android.material.tabs.TabLayout.*
 import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
+import com.shuniuyun.material.utils.SearchViewHelper
 
 /**
  * author:wyb
@@ -84,34 +85,36 @@ class TabLayoutActivity : BaseActivity() {
         val searchMenuItem = menu.findItem(R.id.action_search)
 //        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView = searchMenuItem.actionView as SearchView
-//        searchView?.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-        //搜索图标是否显示在搜索框内
-        searchView?.setIconifiedByDefault(true)
-        //设置搜索框展开时是否显示提交按钮，可不显示
-        searchView?.isSubmitButtonEnabled = true
-        //让键盘的回车键设置成搜索
-        searchView?.imeOptions = EditorInfo.IME_ACTION_SEARCH
-//        //搜索框是否展开，false表示展开
-//        searchView?.setIconified(false)
-//        //获取焦点
-//        searchView?.setFocusable(true)
-//        searchView?.requestFocusFromTouch()
-        //设置提示词
-        searchView?.queryHint = "请输入关键字"
-        //设置输入框文字颜色
-        val editText = searchView?.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
-        editText.setHintTextColor(ContextCompat.getColor(this, R.color.white))
-        editText.setTextColor(ContextCompat.getColor(this, R.color.white))
-        editText.setOnEditorActionListener { _, actionId, _ ->
-            //让键盘的回车键设置成搜索
-            searchView?.imeOptions = EditorInfo.IME_ACTION_SEARCH
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                //完成自己的事件
-                Toast.makeText(this, editText.text, Toast.LENGTH_SHORT).show()
-                searchView?.onActionViewCollapsed()
-            }
-            false
-        }
+        SearchViewHelper.initialize(searchView!!)
+
+////        searchView?.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+//        //搜索图标是否显示在搜索框内
+//        searchView?.setIconifiedByDefault(true)
+//        //设置搜索框展开时是否显示提交按钮，可不显示
+//        searchView?.isSubmitButtonEnabled = true
+//        //让键盘的回车键设置成搜索
+//        searchView?.imeOptions = EditorInfo.IME_ACTION_SEARCH
+////        //搜索框是否展开，false表示展开
+////        searchView?.setIconified(false)
+////        //获取焦点
+////        searchView?.setFocusable(true)
+////        searchView?.requestFocusFromTouch()
+//        //设置提示词
+//        searchView?.queryHint = "请输入关键字"
+//        //设置输入框文字颜色
+//        val editText = searchView?.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
+//        editText.setHintTextColor(ContextCompat.getColor(this, R.color.white))
+//        editText.setTextColor(ContextCompat.getColor(this, R.color.white))
+//        editText.setOnEditorActionListener { _, actionId, _ ->
+//            //让键盘的回车键设置成搜索
+//            searchView?.imeOptions = EditorInfo.IME_ACTION_SEARCH
+//            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+//                //完成自己的事件
+//                Toast.makeText(this, editText.text, Toast.LENGTH_SHORT).show()
+//                searchView?.onActionViewCollapsed()
+//            }
+//            false
+//        }
         return true
     }
 

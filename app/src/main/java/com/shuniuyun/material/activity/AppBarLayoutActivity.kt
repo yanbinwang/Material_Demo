@@ -56,8 +56,8 @@ class AppBarLayoutActivity : BaseActivity() {
             finish()
         }
         //自定义菜单的按钮点击事件
-        toolbar.setOnMenuItemClickListener { menuItem: MenuItem ->
-            when (menuItem.itemId) {
+        toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
                 //设置了actionViewClass为SearchView后，点击事件不生效
 //                R.id.action_search -> Toast.makeText(this, "点击搜索按钮", Toast.LENGTH_SHORT).show()
                 //点击分享按钮，弹出自定义二级菜单
