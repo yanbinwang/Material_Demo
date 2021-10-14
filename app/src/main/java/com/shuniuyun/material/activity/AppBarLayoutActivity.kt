@@ -34,9 +34,6 @@ class AppBarLayoutActivity : BaseActivity() {
             setSupportActionBar(toolbar)
         }
         tabLayout.apply {
-//            //设置各个menu的标题---还可以.setIcon(R.drawable.ic_launcher)加入的图片会在字体上方
-//            addTab(newTab().setText("菜单1---适配器应用"))
-//            addTab(newTab().setText("菜单2---可折叠菜单"))
             tabGravity = TabLayout.GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
             setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
             setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
