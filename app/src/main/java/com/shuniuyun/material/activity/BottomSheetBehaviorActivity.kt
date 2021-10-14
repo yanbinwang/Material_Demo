@@ -3,6 +3,8 @@ package com.shuniuyun.material.activity
 import android.os.Bundle
 import android.view.View
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED
+import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_HIDDEN
 import com.shuniuyun.material.R
 
 /**
@@ -21,7 +23,7 @@ class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
     private fun initView() {
         //拿到对应的BottomSheetBehavior
         behavior = BottomSheetBehavior.from(findViewById(R.id.nsv_bottom_sheet))
-        behavior?.state = BottomSheetBehavior.STATE_HIDDEN
+        behavior?.state = STATE_HIDDEN
     }
 
     private fun initEvent() {
@@ -36,9 +38,7 @@ class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (behavior?.state == BottomSheetBehavior.STATE_HIDDEN) {
-            behavior?.setState(BottomSheetBehavior.STATE_EXPANDED)
-        } else behavior?.setState(BottomSheetBehavior.STATE_HIDDEN)
+        if (behavior?.state == STATE_HIDDEN) behavior?.setState(STATE_EXPANDED) else behavior?.setState(STATE_HIDDEN)
     }
 
 }
