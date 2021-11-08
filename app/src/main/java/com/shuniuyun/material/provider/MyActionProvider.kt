@@ -24,17 +24,30 @@ class MyActionProvider(context: Context) : ActionProvider(context) {
     //show出的2个小标签设置图片
     override fun onPrepareSubMenu(subMenu: SubMenu?) {
         Log.v("MyActionProvider", "onPrepareSubMenu")
-        //清空之前的配置
-        subMenu?.clear()
-        //添加两个子菜单
-        subMenu?.add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+        subMenu?.apply {
+            //清空之前的配置
+            clear()
+            //添加两个子菜单
+            add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
                 Toast.makeText(context, "微信点击", Toast.LENGTH_SHORT).show()
                 false
-        }
-        subMenu?.add("微博")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+            }
+            add("微博")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
                 Toast.makeText(context, "微博点击", Toast.LENGTH_SHORT).show()
                 false
+            }
         }
+//        //清空之前的配置
+//        subMenu?.clear()
+//        //添加两个子菜单
+//        subMenu?.add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+//                Toast.makeText(context, "微信点击", Toast.LENGTH_SHORT).show()
+//                false
+//        }
+//        subMenu?.add("微博")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
+//                Toast.makeText(context, "微博点击", Toast.LENGTH_SHORT).show()
+//                false
+//        }
     }
 
 }
