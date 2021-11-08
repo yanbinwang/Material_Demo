@@ -18,8 +18,7 @@ class TabLayoutPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateA
         return when (position) {
             0 -> TabLayoutFragment()
             1 -> TabLayoutFragment2()
-            2 -> TabLayoutFragment3()
-            else -> Fragment()
+            else -> TabLayoutFragment3()
         }
     }
 
