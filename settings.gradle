@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='material'
+rootProject.name='material-android'
