@@ -14,8 +14,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
  *  Created by wangyanbin
  */
 class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
-    private val INTERPOLATOR by lazy { FastOutSlowInInterpolator() }
-    private var mIsAnimatingOut = false
+    private val inInterpolator by lazy { FastOutSlowInInterpolator() }
+    private var isAnimatingOut = false
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
@@ -24,7 +24,7 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
     }
 
     override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int, type: Int, consumed: IntArray) {
-        if (dyConsumed > 0 && !mIsAnimatingOut && child.visibility == View.VISIBLE) {
+        if (dyConsumed > 0 && !isAnimatingOut && child.visibility == View.VISIBLE) {
             animateOut(child)
         } else if (dyConsumed < 0 && child.visibility != View.VISIBLE) {
             animateIn(child)
@@ -33,16 +33,16 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
 
     private fun animateOut(button: FloatingActionButton) {
         ViewCompat.animate(button).translationY((button.height + getMarginBottom(button)).toFloat())
-            .setInterpolator(INTERPOLATOR).withLayer()
+            .setInterpolator(inInterpolator).withLayer()
             .setListener(object : ViewPropertyAnimatorListener {
                 override fun onAnimationStart(view: View) {
-                    mIsAnimatingOut = true
+                    isAnimatingOut = true
                 }
                 override fun onAnimationCancel(view: View) {
-                    mIsAnimatingOut = false
+                    isAnimatingOut = false
                 }
                 override fun onAnimationEnd(view: View) {
-                    mIsAnimatingOut = false
+                    isAnimatingOut = false
                     view.visibility = View.INVISIBLE
                 }
             }).start()
@@ -51,7 +51,7 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
     private fun animateIn(button: FloatingActionButton) {
         button.visibility = View.VISIBLE
         ViewCompat.animate(button).translationY(0f)
-            .setInterpolator(INTERPOLATOR).withLayer()
+            .setInterpolator(inInterpolator).withLayer()
             .setListener(null)
             .start()
     }

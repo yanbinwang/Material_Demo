@@ -10,8 +10,9 @@ import com.shuniuyun.material.R
 
 /**
  *  Created by wangyanbin
+ *  分享菜单二级展开
  */
-class MyActionProvider(context: Context) : ActionProvider(context) {
+class ShareProvider(context: Context) : ActionProvider(context) {
 
     override fun onCreateActionView(): View? {
         return null
@@ -37,17 +38,6 @@ class MyActionProvider(context: Context) : ActionProvider(context) {
                 false
             }
         }
-//        //清空之前的配置
-//        subMenu?.clear()
-//        //添加两个子菜单
-//        subMenu?.add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
-//                Toast.makeText(context, "微信点击", Toast.LENGTH_SHORT).show()
-//                false
-//        }
-//        subMenu?.add("微博")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
-//                Toast.makeText(context, "微博点击", Toast.LENGTH_SHORT).show()
-//                false
-//        }
     }
 
 }

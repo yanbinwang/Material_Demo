@@ -32,12 +32,11 @@ class RotateBehavior : CoordinatorLayout.Behavior<FloatingActionButton> {
     private fun getFabTranslationYForSnackBar(parent: CoordinatorLayout, fab: FloatingActionButton): Float {
         var minOffset = 0f
         val dependencies = parent.getDependencies(fab)
-        var i = 0
-        val z = dependencies.size
-        while (i < z) {
-            val view = dependencies[i]
+        var index = 0
+        while (index < dependencies.size) {
+            val view = dependencies[index]
             if (view is SnackbarLayout && parent.doViewsOverlap(fab, view)) minOffset = minOffset.coerceAtMost(view.getTranslationY() - view.getHeight())
-            i++
+            index++
         }
         return minOffset
     }

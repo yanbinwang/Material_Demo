@@ -19,7 +19,7 @@
         android:id="@+id/action_intent"
         android:icon="@android:drawable/ic_menu_share"
         android:title="分享"
-        app:actionProviderClass="com.shuniuyun.material.provider.MyActionProvider"
+        app:actionProviderClass="com.shuniuyun.material.provider.ShareProvider"
         app:showAsAction="always" />
 
     <item
