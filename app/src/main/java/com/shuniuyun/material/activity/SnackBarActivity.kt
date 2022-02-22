@@ -7,6 +7,7 @@ import com.shuniuyun.material.R
 
 /**
  * author:wyb
+ * 底部弹彩蛋的安卓新提示框
  */
 class SnackBarActivity : BaseActivity(), View.OnClickListener {
 
@@ -16,7 +17,7 @@ class SnackBarActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        Snackbar.make(v, "测试Snackbar", Snackbar.LENGTH_LONG).setAction("取消") { }.show()
+        Snackbar.make(v, "Snackbar提示框测试", Snackbar.LENGTH_LONG).setAction("取消") { }.show()
     }
 
 }

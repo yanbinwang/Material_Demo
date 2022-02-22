@@ -14,19 +14,19 @@ import com.shuniuyun.material.R
  *  底部弹出窗体工具类
  */
 @SuppressLint("StaticFieldLeak")
-object BottomSheetDialogHelper {
+object SheetDialogHelper {
     private var full = false
-    private var sheetDialog: MBottomSheetDialog? = null
+    private var fullSheetDialog: FullSheetDialog? = null
 
     fun initialize(context: Context, resource: Int, full: Boolean = false) {
         this.full = full
-        this.sheetDialog = MBottomSheetDialog(context)
-        sheetDialog?.setContentView(LayoutInflater.from(context).inflate(resource, null, false))
-        val behavior = BottomSheetBehavior.from(sheetDialog?.delegate?.findViewById(R.id.design_bottom_sheet)!!)
+        this.fullSheetDialog = FullSheetDialog(context)
+        fullSheetDialog?.setContentView(LayoutInflater.from(context).inflate(resource, null, false))
+        val behavior = BottomSheetBehavior.from(fullSheetDialog?.delegate?.findViewById(R.id.design_bottom_sheet)!!)
         behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 if (newState == BottomSheetBehavior.STATE_HIDDEN) {
-                    sheetDialog?.dismiss()
+                    fullSheetDialog?.dismiss()
                     behavior.state = BottomSheetBehavior.STATE_COLLAPSED
                 }
             }
@@ -35,14 +35,16 @@ object BottomSheetDialogHelper {
         })
     }
 
-    fun show() = run { if (!isShowing()) sheetDialog?.show() }
+    fun show() = run { if (!isShowing()) fullSheetDialog?.show() }
 
-    fun dismiss() = run { if (isShowing()) sheetDialog?.dismiss() }
+    fun dismiss() = run { if (isShowing()) fullSheetDialog?.dismiss() }
 
-    private fun isShowing() = sheetDialog?.isShowing ?: false
+    private fun isShowing() = fullSheetDialog?.isShowing ?: false
 
-    //默认展开即全屏
-    private class MBottomSheetDialog(context: Context) : BottomSheetDialog(context) {
+    /**
+     * 默认展开即全屏
+     */
+    private class FullSheetDialog(context: Context) : BottomSheetDialog(context) {
         override fun show() {
             super.show()
             if (full) {

@@ -5,6 +5,7 @@ import com.shuniuyun.material.R
 
 /**
  * author:wyb
+ * 转场动画，点击列表小图后可大图显示
  */
 class AppBarLayoutDetailActivity : BaseActivity() {
 

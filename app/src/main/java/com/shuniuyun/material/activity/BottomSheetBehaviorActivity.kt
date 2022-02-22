@@ -9,6 +9,7 @@ import com.shuniuyun.material.R
 
 /**
  * author:wyb
+ * 底部弹出被隐藏的控件（可手动滑动关闭）
  */
 class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
     private var behavior: BottomSheetBehavior<*>? = null

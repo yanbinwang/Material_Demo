@@ -1,5 +1,6 @@
 package com.shuniuyun.material.utils
 
+import android.annotation.SuppressLint
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
@@ -20,11 +21,14 @@ import com.shuniuyun.material.R
  *  android:layout_weight="1"
  *  android:theme="@style/searchStyle" />
  */
+@SuppressLint("CutPasteId")
 object SearchViewHelper {
-
     fun initialize(searchView: SearchView) {
         val context = searchView.context
         searchView.apply {
+            //文字大小
+            val textView = searchView.findViewById(R.id.search_src_text) as SearchView.SearchAutoComplete
+            textView.textSize = 12f
             //搜索图标是否显示在搜索框内
             setIconifiedByDefault(true)
             //设置搜索框展开时是否显示提交按钮，可不显示

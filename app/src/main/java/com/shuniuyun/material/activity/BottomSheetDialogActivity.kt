@@ -3,10 +3,11 @@ package com.shuniuyun.material.activity
 import android.os.Bundle
 import android.view.View
 import com.shuniuyun.material.R
-import com.shuniuyun.material.utils.BottomSheetDialogHelper
+import com.shuniuyun.material.utils.SheetDialogHelper
 
 /**
  * author:wyb
+ * 弹出一个可上下拉伸的弹框，内容可自定义
  */
 class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
 
@@ -17,11 +18,11 @@ class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
     }
 
     private fun initView() {
-        BottomSheetDialogHelper.initialize(this, R.layout.view_bottomsheetdialog)
+        SheetDialogHelper.initialize(this, R.layout.view_bottomsheetdialog)
     }
 
     override fun onClick(v: View) {
-        BottomSheetDialogHelper.show()
+        SheetDialogHelper.show()
     }
 
 }

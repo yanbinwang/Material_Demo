@@ -25,7 +25,7 @@
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="测试标题">
+            app:title="标题">
 
             <ImageView
                 android:id="@+id/backdrop"
@@ -66,63 +66,63 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/gray_9d9c9c"
-                android:text="测试" />
+                android:text="测试按钮" />
 
         </LinearLayout>
 

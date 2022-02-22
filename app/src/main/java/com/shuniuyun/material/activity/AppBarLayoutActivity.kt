@@ -29,27 +29,27 @@ class AppBarLayoutActivity : BaseActivity() {
 
     private fun initView() {
         toolbar.apply {
-            title = "顶部ToolBar标题"//标题
-            setNavigationIcon(android.R.drawable.ic_menu_revert)//左侧图片
+            title = "ToolBar标题"
+            setNavigationIcon(android.R.drawable.ic_menu_revert)
             setSupportActionBar(toolbar)
         }
         tabLayout.apply {
-            tabGravity = TabLayout.GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
-            setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
-            setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
-//          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
+            tabGravity = TabLayout.GRAVITY_FILL
+            setTabTextColors(Color.GRAY, Color.WHITE)
+            setSelectedTabIndicatorColor(Color.RED)
+//          setSelectedTabIndicatorHeight(5)
         }
         viewPager.adapter = AppBarLayoutPagerAdapter(this)
     }
 
     private fun initEvent() {
         //建立关联
-        val tabTitle = listOf("菜单1---适配器应用", "菜单2---可折叠菜单")
+        val tabTitle = listOf("子菜单---适配器", "子菜单2---可折叠")
         TabLayoutMediator(tabLayout, viewPager, true) { tab, position ->
             tab.text = tabTitle[position]
         }.attach()
         toolbar.setNavigationOnClickListener {
-            Toast.makeText(applicationContext, "点击关闭按钮", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "点击返回按钮关闭页面", Toast.LENGTH_LONG).show()
             finish()
         }
         //自定义菜单的按钮点击事件

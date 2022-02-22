@@ -3,17 +3,13 @@ package com.shuniuyun.material.activity
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
-import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayout.*
+import com.google.android.material.tabs.TabLayout.GRAVITY_FILL
+import com.google.android.material.tabs.TabLayout.OVER_SCROLL_NEVER
 import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
@@ -21,6 +17,7 @@ import com.shuniuyun.material.utils.SearchViewHelper
 
 /**
  * author:wyb
+ * Toolbar标题头嵌套TabLayout二级菜单和viewpage2的使用
  */
 class TabLayoutActivity : BaseActivity() {
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar) }
@@ -36,12 +33,12 @@ class TabLayoutActivity : BaseActivity() {
 
     private fun initView() {
         toolbar.apply {
-            title = "顶部ToolBar标题"//标题
+            title = "ToolBar标题"//标题
             setNavigationIcon(android.R.drawable.ic_menu_revert)//左侧图片
             setSupportActionBar(toolbar)
         }
         tabLayout.apply {
-            tabGravity = GRAVITY_FILL//全局平铺---也可设置成不平铺类似网易新闻那种不停往后翻页的形式
+            tabGravity = GRAVITY_FILL//全局平铺->也可设置成自伸缩，类似网易新闻不停向后翻页的样式
             setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
             setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
 //          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
@@ -53,12 +50,10 @@ class TabLayoutActivity : BaseActivity() {
 
     private fun initEvent() {
         //建立关联
-        val tabTitle = listOf("菜单1", "菜单2", "菜单3")
-        TabLayoutMediator(tabLayout, viewPager, true) { tab, position ->
-            tab.text = tabTitle[position]
-        }.attach()
+        val tabTitle = listOf("子菜单", "子菜单2", "子菜单3")
+        TabLayoutMediator(tabLayout, viewPager, true) { tab, position -> tab.text = tabTitle[position] }.attach()
         toolbar.setNavigationOnClickListener {
-            Toast.makeText(applicationContext, "点击关闭按钮", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "点击返回按钮关闭页面", Toast.LENGTH_LONG).show()
             finish()
         }
         //自定义菜单的按钮点击事件
