@@ -46,4 +46,11 @@
         <item name="android:background">@color/gray_f6f8ff</item>
     </style>
 
+    <style name="tableLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="tabBackground">@android:color/transparent</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
+        <item name="tabIndicator">@drawable/layer_tab_line</item>
+        <item name="tabIndicatorFullWidth">false</item>
+    </style>
+
 </resources>

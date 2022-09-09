@@ -12,16 +12,24 @@
         android:minHeight="?attr/actionBarSize" />
 
     <!-- app:tabIndicatorFullWidth 指示器宽度跟随文本宽度 -->
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/tabLayout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/toolBar"-->
+<!--        android:background="?attr/colorPrimary"-->
+<!--        app:tabBackground="@android:color/transparent"-->
+<!--        app:tabRippleColor="@android:color/transparent"-->
+<!--        app:tabIndicator="@drawable/layer_tab_line"-->
+<!--        app:tabIndicatorFullWidth="false" />-->
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolBar"
         android:background="?attr/colorPrimary"
-        app:tabBackground="@android:color/transparent"
-        app:tabRippleColor="@android:color/transparent"
-        app:tabIndicator="@drawable/layer_tab_line"
-        app:tabIndicatorFullWidth="false" />
+        style="@style/tableLayoutStyle" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"
