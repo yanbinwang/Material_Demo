@@ -14,8 +14,9 @@ import com.shuniuyun.material.R
  */
 class ShareProvider(context: Context) : ActionProvider(context) {
 
-    override fun onCreateActionView(): View? {
-        return null
+    override fun onCreateActionView(): View {
+//        return null
+        return View(context)
     }
 
     override fun hasSubMenu(): Boolean {
@@ -23,7 +24,7 @@ class ShareProvider(context: Context) : ActionProvider(context) {
     }
 
     //show出的2个小标签设置图片
-    override fun onPrepareSubMenu(subMenu: SubMenu?) {
+    override fun onPrepareSubMenu(subMenu: SubMenu) {
         Log.v("MyActionProvider", "onPrepareSubMenu")
         subMenu?.apply {
             //清空之前的配置
