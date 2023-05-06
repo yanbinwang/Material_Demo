@@ -1,15 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- app内的一些颜色-->
+    <color name="appTheme">#3d81f2</color>
+    <color name="appPrimary">#333333</color>
+    <color name="appPrimaryDark">#000000</color>
+    <color name="appNavigationBar">#000000</color>
+    <color name="appWindowBackground">#f6f8ff</color>
+    <color name="appAccent">#3d81f2</color>
+    <color name="appControlNormal">#333333</color>
+    <!-- 输入框/显示文本 -->
+    <color name="textPrimary">#333333</color>
+    <color name="textHint">#7F8185</color>
+    <color name="textDisabled">#aaa</color>
+    <!-- 弹框/默认线条背景 -->
+    <color name="bgShadow">#ff000000</color>
+    <color name="bgLine">#f6f8ff</color>
+    <!-- 特定字体的颜色 -->
+    <color name="textBlack">#333333</color>
+    <!-- 廣告選中/未選中下標 -->
+    <color name="advertSelect">#3d81f2</color>
+    <color name="advertUnselect">#6e7ce2</color>
+    <!-- 其余定义的颜色 -->
     <color name="white">#ffffff</color>
     <color name="white_ccc">#ccc</color>
+    <color name="white_00ffffff">#00ffffff</color>
+    <color name="white_efffffff">#efffffff</color>
 
     <color name="black">#000000</color>
+    <color name="black_111b34">#111b34</color>
+    <color name="black_33000000">#33000000</color>
+    <color name="black_4c000000">#4c000000</color>
+    <color name="black_ef111111">#ef111111</color>
+    <color name="white_ff000000">#ff000000</color>
 
+    <color name="grey_f1f1f4">#f1f1f4</color>
     <color name="grey_333333">#333333</color>
-    <color name="gray_f6f8ff">#f6f8ff</color>
-    <color name="gray_9d9c9c">#9d9c9c</color>
+    <color name="grey_666666">#666666</color>
+    <color name="grey_6c6c6c">#6c6c6c</color>
+    <color name="grey_999999">#999999</color>
+    <color name="grey_9f9f9f">#9f9f9f</color>
+    <color name="grey_f6f8ff">#f6f8ff</color>
+    <color name="grey_c5cad5">#c5cad5</color>
+    <color name="grey_cccccc">#cccccc</color>
+    <color name="grey_a8a5a5">#a8a5a5</color>
     <color name="grey_f5f6fa">#f5f6fa</color>
+    <color name="grey_9d9c9c">#9d9c9c</color>
 
+    <color name="blue_1566ec">#1566ec</color>
+    <color name="blue_2a3160">#2a3160</color>
+    <color name="blue_3d81f2">#3d81f2</color>
+    <color name="blue_0d86ff">#0d86ff</color>
+    <color name="blue_1e2b8e">#1e2b8e</color>
+    <color name="blue_233d8c">#233d8c</color>
+    <color name="blue_3e78f1">#3e78f1</color>
+    <color name="blue_3259e1">#3259e1</color>
     <color name="blue_2e60df">#2e60df</color>
+    <color name="blue_6e7ce2">#6e7ce2</color>
+    <color name="blue_a4ace8">#a4ace8</color>
+    <color name="blue_3158f5">#3158f5</color>
     <color name="blue_ecf2fe">#ecf2fe</color>
+    <color name="blue_aac6f4">#aac6f4</color>
+
 </resources>

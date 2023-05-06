@@ -26,7 +26,7 @@
             android:id="@+id/btn_bottom_sheet_control"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:onClick="onClick"
             android:text="sheet 显示/隐藏" />
 
@@ -50,28 +50,28 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/gray_9d9c9c"
+                android:background="@color/grey_9d9c9c"
                 android:text="第一" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/gray_9d9c9c"
+                android:background="@color/grey_9d9c9c"
                 android:text="第二" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/gray_9d9c9c"
+                android:background="@color/grey_9d9c9c"
                 android:text="第三" />
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/gray_9d9c9c"
+                android:background="@color/grey_9d9c9c"
                 android:text="第四" />
 
         </LinearLayout>

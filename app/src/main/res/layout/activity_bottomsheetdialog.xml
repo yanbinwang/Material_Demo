@@ -18,7 +18,7 @@
         android:id="@+id/btn_bottom_sheet_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="dialog 显示/隐藏" />
 

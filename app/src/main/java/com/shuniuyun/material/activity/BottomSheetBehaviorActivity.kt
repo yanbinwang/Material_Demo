@@ -2,6 +2,7 @@ package com.shuniuyun.material.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_EXPANDED
 import com.google.android.material.bottomsheet.BottomSheetBehavior.STATE_HIDDEN
@@ -11,7 +12,7 @@ import com.shuniuyun.material.R
  * author:wyb
  * 底部弹出被隐藏的控件（可手动滑动关闭）
  */
-class BottomSheetBehaviorActivity : BaseActivity(), View.OnClickListener {
+class BottomSheetBehaviorActivity : AppCompatActivity(), View.OnClickListener {
     private var behavior: BottomSheetBehavior<*>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {

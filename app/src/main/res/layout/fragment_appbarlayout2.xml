@@ -12,98 +12,98 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
-            android:background="@color/gray_9d9c9c"
+            android:background="@color/grey_9d9c9c"
             android:text="测试" />
 
     </LinearLayout>

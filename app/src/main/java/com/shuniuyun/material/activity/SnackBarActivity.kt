@@ -2,6 +2,7 @@ package com.shuniuyun.material.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.shuniuyun.material.R
 
@@ -9,7 +10,7 @@ import com.shuniuyun.material.R
  * author:wyb
  * 底部弹彩蛋的安卓新提示框
  */
-class SnackBarActivity : BaseActivity(), View.OnClickListener {
+class SnackBarActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -2,6 +2,7 @@ package com.shuniuyun.material.activity
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.shuniuyun.material.R
 import com.shuniuyun.material.utils.SheetDialogHelper
 
@@ -9,7 +10,7 @@ import com.shuniuyun.material.utils.SheetDialogHelper
  * author:wyb
  * 弹出一个可上下拉伸的弹框，内容可自定义
  */
-class BottomSheetDialogActivity : BaseActivity(), View.OnClickListener {
+class BottomSheetDialogActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

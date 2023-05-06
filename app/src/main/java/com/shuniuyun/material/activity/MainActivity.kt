@@ -3,12 +3,13 @@ package com.shuniuyun.material.activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.shuniuyun.material.R
 
 /**
  * 首页功能展示
  */
-class MainActivity : BaseActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

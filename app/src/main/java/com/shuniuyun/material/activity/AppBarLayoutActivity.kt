@@ -3,8 +3,8 @@ package com.shuniuyun.material.activity
 import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -15,7 +15,7 @@ import com.shuniuyun.material.adapter.AppBarLayoutPagerAdapter
 /**
  *  Created by wangyanbin
  */
-class AppBarLayoutActivity : BaseActivity() {
+class AppBarLayoutActivity : AppCompatActivity() {
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar); }
     private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout); }
     private val viewPager by lazy { findViewById<ViewPager2>(R.id.viewpager); }

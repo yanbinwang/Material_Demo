@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="TabLayout" />
 
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="CoordinatorLayout与FloatingActionButton" />
 
@@ -37,7 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="CoordinatorLayout与AppBarLayout" />
 
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="AppBarLayout嵌套CollapsingToolbarLayout" />
 
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="BottomSheetBehavior" />
 
@@ -64,7 +64,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:background="@color/gray_9d9c9c"
+        android:background="@color/grey_9d9c9c"
         android:onClick="onClick"
         android:text="BottomSheetDialog" />
 

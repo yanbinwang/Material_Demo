@@ -46,6 +46,6 @@
 
     </LinearLayout>
 
-    <View style="@style/lineWidth" />
+    <View style="@style/LineWidth" />
 
 </LinearLayout>

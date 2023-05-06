@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace 'com.shuniuyun.material'
     compileSdkVersion 33
     defaultConfig {
         applicationId "com.shuniuyun.material"

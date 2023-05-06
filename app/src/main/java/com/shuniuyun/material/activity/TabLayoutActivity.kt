@@ -4,24 +4,23 @@ import android.graphics.Color
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.GRAVITY_FILL
 import com.google.android.material.tabs.TabLayout.OVER_SCROLL_NEVER
-import com.google.android.material.tabs.TabLayoutMediator
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
 import com.shuniuyun.material.utils.SearchViewHelper
 import com.shuniuyun.material.utils.TabLayoutHelper
-import com.shuniuyun.material.utils.bind
 
 /**
  * author:wyb
  * Toolbar标题头嵌套TabLayout二级菜单和viewpage2的使用
  */
-class TabLayoutActivity : BaseActivity() {
+class TabLayoutActivity : AppCompatActivity() {
     private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar) }
     private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout) }
     private val viewPager by lazy { findViewById<ViewPager2>(R.id.viewpager) }
