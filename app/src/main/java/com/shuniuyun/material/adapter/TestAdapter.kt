@@ -8,12 +8,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.shuniuyun.material.R
-import com.shuniuyun.material.model.TestModel
+import com.shuniuyun.material.bean.TestBean
 
 /**
  *  Created by wangyanbin
  */
-class TestAdapter(private var mData: MutableList<TestModel>) : RecyclerView.Adapter<TestAdapter.ViewHolder>() {
+class TestAdapter(private var mData: MutableList<TestBean>) : RecyclerView.Adapter<TestAdapter.ViewHolder>() {
     var itemOnClickListener: View.OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_test, parent, false))

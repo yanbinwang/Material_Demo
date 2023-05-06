@@ -14,14 +14,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shuniuyun.material.R
 import com.shuniuyun.material.activity.AppBarLayoutDetailActivity
 import com.shuniuyun.material.adapter.TestAdapter
-import com.shuniuyun.material.model.TestModel
+import com.shuniuyun.material.bean.TestBean
 
 /**
  * 如果需要翻页滚动且隐藏标题，根据网上做法，只有在布局外用NestedScrollVie（最外层父级）可使用
  * @author wyb
  */
 class AppBarLayoutFragment : Fragment() {
-    private val dataList by lazy { ArrayList<TestModel>() }
+    private val dataList by lazy { ArrayList<TestBean>() }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return LayoutInflater.from(context).inflate(R.layout.fragment_appbarlayout, container, false)
@@ -30,7 +30,7 @@ class AppBarLayoutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         for (i in 0..19) {
-            dataList.add(TestModel("标题$i", "简介$i"))
+            dataList.add(TestBean("标题$i", "简介$i"))
         }
         val recyclerView = view.findViewById(R.id.rec) as RecyclerView
         recyclerView.setHasFixedSize(true)

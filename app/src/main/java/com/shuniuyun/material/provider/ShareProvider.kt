@@ -26,7 +26,7 @@ class ShareProvider(context: Context) : ActionProvider(context) {
     //show出的2个小标签设置图片
     override fun onPrepareSubMenu(subMenu: SubMenu) {
         Log.v("MyActionProvider", "onPrepareSubMenu")
-        subMenu?.apply {
+        subMenu.apply {
             //清空之前的配置
             clear()
             //添加两个子菜单

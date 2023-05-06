@@ -1,6 +1,6 @@
-package com.shuniuyun.material.model
+package com.shuniuyun.material.bean
 
-class TestModel(
+data class TestBean(
     var title: String? = null,
     var des: String? = null
 )
