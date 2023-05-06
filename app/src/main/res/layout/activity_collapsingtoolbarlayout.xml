@@ -15,12 +15,21 @@
         <!-- contentScrim:设置当完全CollapsingToolbarLayout折叠(收缩)后的背景颜色。 -->
         <!-- android:fitsSystemWindows="true":Android4.4-5.0以上:半透明(APP 的内容不被上拉到状态) Android4.4以下:不占据status bar -->
         <!-- expandedTitleMarginEnd及 expandedTitleMarginStart文字间距设置 -->
+        <!--
+        要想文字居中;;;;;
+        CollapsingToolbarLayout设置：
+         app:collapsedTitleGravity="center_horizontal"
+        Toolbar设置：
+          app:contentInsetLeft="0dp"
+          app:contentInsetStart="0dp"
+        -->
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
+            app:collapsedTitleGravity="center_horizontal"
             app:contentScrim="@color/black"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
@@ -43,6 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:fitsSystemWindows="true"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
