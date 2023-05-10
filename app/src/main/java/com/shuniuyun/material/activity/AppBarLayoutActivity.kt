@@ -31,7 +31,7 @@ class AppBarLayoutActivity : AppCompatActivity() {
         toolbar.apply {
             title = "ToolBar标题"
             setNavigationIcon(android.R.drawable.ic_menu_revert)
-            setSupportActionBar(toolbar)
+            setSupportActionBar(this)
         }
         tabLayout.apply {
             tabGravity = TabLayout.GRAVITY_FILL

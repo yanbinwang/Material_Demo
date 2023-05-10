@@ -36,7 +36,7 @@ class TabLayoutActivity : AppCompatActivity() {
         toolbar.apply {
             title = "ToolBar标题"//标题
             setNavigationIcon(android.R.drawable.ic_menu_revert)//左侧图片
-            setSupportActionBar(toolbar)
+            setSupportActionBar(this)
         }
 //        app:tabSelectedTextColor="@color/kd_enet_cl_3F78DF"
 //        app:tabTextColor="@color/kd_enet_cl_333"
