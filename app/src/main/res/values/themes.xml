@@ -12,6 +12,8 @@
         <item name="colorPrimary">@color/appPrimary</item>
         <!-- 状态栏栏颜色 -->
         <item name="colorPrimaryDark">@color/appPrimaryDark</item>
+        <!-- 状态栏深色UI -->
+        <item name="android:windowLightStatusBar">true</item>
         <!-- 导航栏颜色 -->
         <item name="android:navigationBarColor">@color/appNavigationBar</item>
         <!-- 页面背景色 -->
@@ -37,14 +39,14 @@
 
     <!-- 布局画高线样式 -->
     <style name="LineHeight">
-        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_width">1pt</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/bgLine</item>
     </style>
 
     <style name="LineConstraintHeight" parent="LineHeight">
-        <item name="android:layout_width">1dp</item>
-        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">1pt</item>
+        <item name="android:layout_height">0pt</item>
         <item name="layout_constraintTop_toTopOf">parent</item>
         <item name="layout_constraintBottom_toBottomOf">parent</item>
     </style>
@@ -52,13 +54,13 @@
     <!-- 布局画横线样式 -->
     <style name="LineWidth">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_height">1pt</item>
         <item name="android:background">@color/bgLine</item>
     </style>
 
     <style name="LineConstraintWidth" parent="LineWidth">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">0pt</item>
+        <item name="android:layout_height">1pt</item>
         <item name="layout_constraintEnd_toEndOf">parent</item>
         <item name="layout_constraintStart_toStartOf">parent</item>
     </style>
