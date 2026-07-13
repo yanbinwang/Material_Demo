@@ -46,6 +46,31 @@ import kotlin.math.abs
  * 折叠态字号/样式	    collapsedTitleTextAppearance  自定义 style
  * 折叠态背景色	    contentScrim	              @color/black
  * 展开态标题渐变遮罩	scrimVisibleHeightTrigger	  120dp（可选）
+ *
+ * <com.google.android.material.appbar.CollapsingToolbarLayout ...>
+ *
+ *     <!-- ✅ 外层写 pin，整个区域固定 -->
+ *     <LinearLayout
+ *         android:layout_width="match_parent"
+ *         android:layout_height="wrap_content"
+ *         app:layout_collapseMode="pin">
+ *
+ *         <ImageView ... />   <!-- 不需要再写 collapseMode -->
+ *         <TextView ... />    <!-- 不需要再写 collapseMode -->
+ *     </LinearLayout>
+ *
+ *     <!-- 背景图用 parallax -->
+ *     <ImageView
+ *         android:layout_width="match_parent"
+ *         android:layout_height="match_parent"
+ *         android:scaleType="centerCrop"
+ *         android:src="@mipmap/bg_header"
+ *         app:layout_collapseMode="parallax" />
+ *
+ *     <!-- Toolbar 放最后 -->
+ *     <androidx.appcompat.widget.Toolbar ... />
+ *
+ * </com.google.android.material.appbar.CollapsingToolbarLayout>
  */
 class CollapsingToolbarLayoutActivity : AppCompatActivity() {
 
