@@ -20,17 +20,16 @@ class CollapsingToolbarLayoutActivity : AppCompatActivity() {
         setContentView(R.layout.activity_collapsingtoolbarlayout)
         val appbar = findViewById<AppBarLayout>(R.id.appbar)
         appbar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
-            private var isHide = false
+            private var isCollapsed = false
             override fun onOffsetChanged(appBarLayout: AppBarLayout?, verticalOffset: Int) {
-                val needHide = abs(verticalOffset) < (appBarLayout?.totalScrollRange ?: 0)
-                if (needHide != isHide) {
-                    isHide = needHide
-                    //展开
-                    if (needHide) {
-                        Log.e("wyb","展开")
-                        //折起
+                val totalRange = appBarLayout?.totalScrollRange ?: return
+                val currentlyCollapsed = abs(verticalOffset) < totalRange
+                if (currentlyCollapsed != isCollapsed) {
+                    isCollapsed = currentlyCollapsed
+                    if (isCollapsed) {
+                        Log.d("wyb", "展开")
                     } else {
-                        Log.e("wyb","折起")
+                        Log.d("wyb", "折叠")
                     }
                 }
             }
