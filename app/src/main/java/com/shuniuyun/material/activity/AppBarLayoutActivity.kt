@@ -16,9 +16,9 @@ import com.shuniuyun.material.adapter.AppBarLayoutPagerAdapter
  *  Created by wangyanbin
  */
 class AppBarLayoutActivity : AppCompatActivity() {
-    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar); }
-    private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout); }
-    private val viewPager by lazy { findViewById<ViewPager2>(R.id.viewpager); }
+    private val toolbar by lazy { findViewById<Toolbar>(R.id.toolBar) }
+    private val tabLayout by lazy { findViewById<TabLayout>(R.id.tabLayout) }
+    private val viewPager by lazy { findViewById<ViewPager2>(R.id.viewpager) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,7 @@ class AppBarLayoutActivity : AppCompatActivity() {
     }
 
     private fun initEvent() {
-        //建立关联
+        // 建立关联
         val tabTitle = listOf("子菜单---适配器", "子菜单2---可折叠")
         TabLayoutMediator(tabLayout, viewPager, true) { tab, position ->
             tab.text = tabTitle[position]
@@ -52,14 +52,14 @@ class AppBarLayoutActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "点击返回按钮关闭页面", Toast.LENGTH_LONG).show()
             finish()
         }
-        //自定义菜单的按钮点击事件
+        // 自定义菜单的按钮点击事件
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                //设置了actionViewClass为SearchView后，点击事件不生效
+                // 设置了actionViewClass为SearchView后，点击事件不生效
 //                R.id.action_search -> Toast.makeText(this, "点击搜索按钮", Toast.LENGTH_SHORT).show()
-                //点击分享按钮，弹出自定义二级菜单
+                // 点击分享按钮，弹出自定义二级菜单
                 R.id.action_intent -> Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show()
-                //设置被叠在了3个点当中
+                // 设置被叠在了3个点当中
                 R.id.action_settings -> Toast.makeText(this, "点击设置按钮", Toast.LENGTH_SHORT).show()
             }
             false

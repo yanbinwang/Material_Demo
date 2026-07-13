@@ -35,17 +35,17 @@ class TabLayoutActivity : AppCompatActivity() {
     private fun initView() {
         toolbar.apply {
             title = "ToolBar标题"//标题
-            setNavigationIcon(android.R.drawable.ic_menu_revert)//左侧图片
+            setNavigationIcon(android.R.drawable.ic_menu_revert) // 左侧图片
             setSupportActionBar(this)
         }
 //        app:tabSelectedTextColor="@color/kd_enet_cl_3F78DF"
 //        app:tabTextColor="@color/kd_enet_cl_333"
 
         tabLayout.apply {
-            tabGravity = GRAVITY_FILL//全局平铺->也可设置成自伸缩，类似网易新闻不停向后翻页的样式
-            setTabTextColors(Color.GRAY, Color.WHITE)//未选中白色，选中灰色
-            setSelectedTabIndicatorColor(Color.RED)//选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
-//          setSelectedTabIndicatorHeight(5)//选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
+            tabGravity = GRAVITY_FILL // 全局平铺->也可设置成自伸缩，类似网易新闻不停向后翻页的样式
+            setTabTextColors(Color.GRAY, Color.WHITE) // 未选中白色，选中灰色
+            setSelectedTabIndicatorColor(Color.RED) // 选中底部线的颜色-drawable配置背景色不管有，会被style的颜色替代，直接代码或xml配置
+//          setSelectedTabIndicatorHeight(5) // 选中底部线的高度-使用app:tabIndicator="@drawable/layer_tab_line"替代
         }
         val adapter = TabLayoutPagerAdapter(this)
         viewPager.adapter = adapter
@@ -62,19 +62,18 @@ class TabLayoutActivity : AppCompatActivity() {
             Toast.makeText(this, "点击返回按钮关闭页面", Toast.LENGTH_LONG).show()
             finish()
         }
-        //自定义菜单的按钮点击事件
+        // 自定义菜单的按钮点击事件
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
-                //设置了actionViewClass为SearchView后，点击事件不生效
+                // 设置了actionViewClass为SearchView后，点击事件不生效
 //                R.id.action_search -> Toast.makeText(this, "点击搜索按钮", Toast.LENGTH_SHORT).show()
-                //点击分享按钮，弹出自定义二级菜单
+                // 点击分享按钮，弹出自定义二级菜单
                 R.id.action_intent -> Toast.makeText(this, "点击分享按钮", Toast.LENGTH_SHORT).show()
-                //设置被叠在了3个点当中
+                // 设置被叠在了3个点当中
                 R.id.action_settings -> Toast.makeText(this, "点击设置按钮", Toast.LENGTH_SHORT).show()
             }
             false
         }
-
         TabLayoutHelper.initialize(viewPager,tabLayout, mutableListOf("子菜单", "子菜单2", "子菜单3"))
     }
 

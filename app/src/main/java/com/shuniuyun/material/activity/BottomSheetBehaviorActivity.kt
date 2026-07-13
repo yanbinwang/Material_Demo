@@ -23,7 +23,7 @@ class BottomSheetBehaviorActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initView() {
-        //拿到对应的BottomSheetBehavior
+        // 拿到对应的BottomSheetBehavior
         behavior = BottomSheetBehavior.from(findViewById(R.id.nsv_bottom_sheet))
         behavior?.state = STATE_HIDDEN
     }
@@ -31,10 +31,10 @@ class BottomSheetBehaviorActivity : AppCompatActivity(), View.OnClickListener {
     private fun initEvent() {
         behavior?.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
-                //bottomSheet状态的改变，根据slideOffset可以做一些动画
+                // bottomSheet状态的改变，根据slideOffset可以做一些动画
             }
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
-                //拖拽中的回调，根据slideOffset可以做一些动画
+                // 拖拽中的回调，根据slideOffset可以做一些动画
             }
         })
     }

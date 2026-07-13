@@ -1,5 +1,6 @@
 package com.shuniuyun.material.behavior
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
@@ -11,11 +12,8 @@ import com.google.android.material.snackbar.Snackbar.SnackbarLayout
  *  Created by wangyanbin
  * 实现点击FloatingActionButton点击旋转90度，并适配Snackbar。
  */
-class RotateBehavior : CoordinatorLayout.Behavior<FloatingActionButton> {
-
-    constructor()
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+@SuppressLint("RestrictedApi")
+class RotateBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.Behavior<FloatingActionButton>(context, attrs) {
 
     override fun layoutDependsOn(parent: CoordinatorLayout, child: FloatingActionButton, dependency: View): Boolean {
         return dependency is SnackbarLayout
@@ -35,7 +33,9 @@ class RotateBehavior : CoordinatorLayout.Behavior<FloatingActionButton> {
         var index = 0
         while (index < dependencies.size) {
             val view = dependencies[index]
-            if (view is SnackbarLayout && parent.doViewsOverlap(fab, view)) minOffset = minOffset.coerceAtMost(view.getTranslationY() - view.getHeight())
+            if (view is SnackbarLayout && parent.doViewsOverlap(fab, view)) {
+                minOffset = minOffset.coerceAtMost(view.translationY - view.height)
+            }
             index++
         }
         return minOffset

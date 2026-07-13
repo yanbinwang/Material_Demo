@@ -112,10 +112,10 @@ class AppBarLayoutFragment : Fragment() {
         for (i in 0..19) {
             dataList.add(TestBean("标题$i", "简介$i"))
         }
-        val recyclerView = view.findViewById(R.id.rec) as RecyclerView
+        val recyclerView = view.findViewById<RecyclerView>(R.id.rec)
         recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = GridLayoutManager(context, 1) //设置一行设定是2个占位
-        //说是如果item的高度固定不变，设置这个属性能提高性能，RecyclerView保持固定的大小
+        recyclerView.layoutManager = GridLayoutManager(context, 1) // 设置一行设定是2个占位
+        // 说是如果item的高度固定不变，设置这个属性能提高性能，RecyclerView保持固定的大小
         val mAdapter = TestAdapter(dataList)
         mAdapter.itemOnClickListener = View.OnClickListener { v: View? ->
 //            int position = Integer.parseInt(v.getTag().toString());

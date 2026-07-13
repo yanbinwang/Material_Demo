@@ -23,13 +23,13 @@ class ShareProvider(context: Context) : ActionProvider(context) {
         return true
     }
 
-    //show出的2个小标签设置图片
+    // show出的2个小标签设置图片
     override fun onPrepareSubMenu(subMenu: SubMenu) {
         Log.v("MyActionProvider", "onPrepareSubMenu")
         subMenu.apply {
-            //清空之前的配置
+            // 清空之前的配置
             clear()
-            //添加两个子菜单
+            // 添加两个子菜单
             add("微信")?.setIcon(R.mipmap.ic_launcher)?.setOnMenuItemClickListener {
                 Toast.makeText(context, "微信点击", Toast.LENGTH_SHORT).show()
                 false

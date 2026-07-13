@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
+import androidx.core.view.isVisible
 import androidx.interpolator.view.animation.FastOutLinearInInterpolator
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -14,20 +15,18 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 /**
  *  Created by wangyanbin
  */
-class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
+class ScrollAwareFABBehaviorDefault(context: Context, attrs: AttributeSet) : FloatingActionButton.Behavior(context, attrs) {
 
     override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, directTargetChild: View, target: View, axes: Int, type: Int): Boolean {
         return axes == ViewCompat.SCROLL_AXIS_VERTICAL || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, axes, type)
     }
 
     override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int, type: Int, consumed: IntArray) {
-        if (dyConsumed > 10 && child.visibility == View.VISIBLE) {
-            //执行隐藏的动画
+        if (dyConsumed > 10 && child.isVisible) {
+            // 执行隐藏的动画
             hide(child)
-        } else if (dyConsumed < -10 && child.visibility != View.VISIBLE) {
-            //执行显示的动画
+        } else if (dyConsumed < -10 && !child.isVisible) {
+            // 执行显示的动画
             show(child)
         }
     }
@@ -49,6 +48,7 @@ class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
                     override fun onAnimationStart(animation: Animator) {
                         visibility = View.VISIBLE
                     }
+
                     override fun onAnimationEnd(animation: Animator) {}
                 })
         }
@@ -70,9 +70,11 @@ class ScrollAwareFABBehaviorDefault : FloatingActionButton.Behavior {
                         visibility = View.VISIBLE
                         mCancelled = false
                     }
+
                     override fun onAnimationCancel(animation: Animator) {
                         mCancelled = true
                     }
+
                     override fun onAnimationEnd(animation: Animator) {
                         if (!mCancelled) visibility = View.INVISIBLE
                     }

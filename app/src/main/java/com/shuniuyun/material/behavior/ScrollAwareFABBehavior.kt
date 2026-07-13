@@ -7,26 +7,25 @@ import android.view.ViewGroup.MarginLayoutParams
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.ViewPropertyAnimatorListener
+import androidx.core.view.isVisible
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  *  Created by wangyanbin
  */
-class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
+class ScrollAwareFABBehavior(context: Context, attrs: AttributeSet) : FloatingActionButton.Behavior(context, attrs) {
     private val inInterpolator by lazy { FastOutSlowInInterpolator() }
     private var isAnimatingOut = false
-
-    constructor(context: Context, attrs: AttributeSet) : super(context, attrs)
 
     override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, directTargetChild: View, target: View, axes: Int, type: Int): Boolean {
         return axes == ViewCompat.SCROLL_AXIS_VERTICAL || super.onStartNestedScroll(coordinatorLayout, child, directTargetChild, target, axes, type)
     }
 
     override fun onNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton, target: View, dxConsumed: Int, dyConsumed: Int, dxUnconsumed: Int, dyUnconsumed: Int, type: Int, consumed: IntArray) {
-        if (dyConsumed > 0 && !isAnimatingOut && child.visibility == View.VISIBLE) {
+        if (dyConsumed > 0 && !isAnimatingOut && child.isVisible) {
             animateOut(child)
-        } else if (dyConsumed < 0 && child.visibility != View.VISIBLE) {
+        } else if (dyConsumed < 0 && !child.isVisible) {
             animateIn(child)
         }
     }
@@ -38,9 +37,11 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
                 override fun onAnimationStart(view: View) {
                     isAnimatingOut = true
                 }
+
                 override fun onAnimationCancel(view: View) {
                     isAnimatingOut = false
                 }
+
                 override fun onAnimationEnd(view: View) {
                     isAnimatingOut = false
                     view.visibility = View.INVISIBLE
