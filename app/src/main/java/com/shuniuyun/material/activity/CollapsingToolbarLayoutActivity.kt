@@ -15,8 +15,8 @@ import kotlin.math.abs
 class CollapsingToolbarLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         setContentView(R.layout.activity_collapsingtoolbarlayout)
         val appbar = findViewById<AppBarLayout>(R.id.appbar)
         appbar.addOnOffsetChangedListener(object : AppBarLayout.OnOffsetChangedListener {
