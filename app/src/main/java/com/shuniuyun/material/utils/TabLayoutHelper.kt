@@ -67,10 +67,10 @@ object TabLayoutHelper {
     private fun setData(select: Boolean, tvTitle: TextView) {
         if (select) {
             tvTitle.setBackgroundResource(R.drawable.shape_tab_selected_line)
-            tvTitle.setTextColor(ContextCompat.getColor(tvTitle.context, R.color.white))
+            tvTitle.setTextColor(ContextCompat.getColor(tvTitle.context, R.color.textWhite))
         } else {
             tvTitle.setBackgroundResource(R.drawable.shape_tab_line)
-            tvTitle.setTextColor(ContextCompat.getColor(tvTitle.context, R.color.black))
+            tvTitle.setTextColor(ContextCompat.getColor(tvTitle.context, R.color.textBlack))
         }
     }
 

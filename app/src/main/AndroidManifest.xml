@@ -20,10 +20,10 @@
         <!-- exported->标示当前Activity是否可以被另一个Application的组件启动：true允许被启动；false不允许被启动。 -->
         <activity
             android:name=".activity.MainActivity"
-            android:exported="true"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:screenOrientation="portrait">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,44 +34,44 @@
         <activity
             android:name=".activity.TabLayoutActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.SnackBarActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.AppBarLayoutActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.AppBarLayoutDetailActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.CollapsingToolbarLayoutActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.BottomSheetBehaviorActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <activity
             android:name=".activity.BottomSheetDialogActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|screenLayout|uiMode"
-            android:windowSoftInputMode="stateHidden|adjustPan"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
     </application>
 

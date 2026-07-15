@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/bgBlack"
         android:minHeight="?attr/actionBarSize" />
 
     <!-- app:tabIndicatorFullWidth 指示器宽度跟随文本宽度 -->
-<!--    <com.google.android.material.tabs.TabLayout-->
-<!--        android:id="@+id/tabLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/toolBar"-->
-<!--        android:background="?attr/colorPrimary"-->
-<!--        app:tabBackground="@android:color/transparent"-->
-<!--        app:tabRippleColor="@android:color/transparent"-->
-<!--        app:tabIndicator="@drawable/layer_tab_line"-->
-<!--        app:tabIndicatorFullWidth="false" />-->
+    <!--    <com.google.android.material.tabs.TabLayout-->
+    <!--        android:id="@+id/tabLayout"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/toolBar"-->
+    <!--        android:background="?attr/colorPrimary"-->
+    <!--        app:tabBackground="@android:color/transparent"-->
+    <!--        app:tabRippleColor="@android:color/transparent"-->
+    <!--        app:tabIndicator="@drawable/layer_tab_line"-->
+    <!--        app:tabIndicatorFullWidth="false" />-->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        style="@style/TabLayoutStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolBar"
-        android:background="?attr/colorPrimary"
-        style="@style/tableLayoutStyle" />
+        android:background="?attr/colorPrimary" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager"

@@ -41,8 +41,8 @@ object SearchViewHelper {
         //设置输入框文字颜色
         val editText = searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
         editText.apply {
-            setHintTextColor(ContextCompat.getColor(context, R.color.white))
-            setTextColor(ContextCompat.getColor(context, R.color.white))
+            setHintTextColor(ContextCompat.getColor(context, R.color.textWhite))
+            setTextColor(ContextCompat.getColor(context, R.color.textWhite))
             setOnEditorActionListener { _, actionId, _ ->
                 //让键盘的回车键设置成搜索
                 searchView.imeOptions = EditorInfo.IME_ACTION_SEARCH

@@ -40,7 +40,6 @@ class TabLayoutActivity : AppCompatActivity() {
         }
 //        app:tabSelectedTextColor="@color/kd_enet_cl_3F78DF"
 //        app:tabTextColor="@color/kd_enet_cl_333"
-
         tabLayout.apply {
             tabGravity = GRAVITY_FILL // 全局平铺->也可设置成自伸缩，类似网易新闻不停向后翻页的样式
             setTabTextColors(Color.GRAY, Color.WHITE) // 未选中白色，选中灰色
@@ -57,7 +56,6 @@ class TabLayoutActivity : AppCompatActivity() {
 //        val tabTitle = listOf("子菜单", "子菜单2", "子菜单3")
 ////        TabLayoutMediator(tabLayout, viewPager, true) { tab, position -> tab.text = tabTitle[position] }.attach()
 //        viewPager.bind(tabLayout) { tab, position -> tab.text = tabTitle[position] }
-
         toolbar.setNavigationOnClickListener {
             Toast.makeText(this, "点击返回按钮关闭页面", Toast.LENGTH_LONG).show()
             finish()

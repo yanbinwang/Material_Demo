@@ -30,7 +30,7 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:collapsedTitleGravity="center_horizontal"
-            app:contentScrim="@color/black"
+            app:contentScrim="@color/bgBlack"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -80,63 +80,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
-                android:background="@color/grey_9d9c9c"
+                android:background="@color/textSecondary"
                 android:text="测试按钮" />
 
         </LinearLayout>

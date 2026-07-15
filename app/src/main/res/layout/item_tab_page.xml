@@ -12,7 +12,7 @@
         android:layout_marginHorizontal="6dp"
         android:gravity="center"
         android:paddingHorizontal="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/textPrimary"
         android:textSize="16dp"
         android:textStyle="bold"
         tools:text="文案文案文案" />

@@ -1,10 +1,4 @@
-import com.android.testing.utils.is16kPageSource
-import com.android.utils.FileUtils.copyFile
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import java.io.FileInputStream
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -57,8 +51,8 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.android.testing)
-    //安卓x库
+    // 安卓x库
     api(libs.bundles.androidx.general.core)
-    //其余谷歌官方库
+    // 谷歌官方库
     api(libs.bundles.google.extensions)
 }
