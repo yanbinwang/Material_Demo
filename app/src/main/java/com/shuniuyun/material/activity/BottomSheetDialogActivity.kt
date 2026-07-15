@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.shuniuyun.material.R
-import com.shuniuyun.material.utils.SheetDialogHelper
+import com.shuniuyun.material.utils.SheetDialogFactory
 
 /**
  * author:wyb
  * 弹出一个可上下拉伸的弹框，内容可自定义
  */
 class BottomSheetDialogActivity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var fullSheetDialog: SheetDialogFactory.FullSheetDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +20,12 @@ class BottomSheetDialogActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initView() {
-        SheetDialogHelper.initialize(this, R.layout.view_bottomsheetdialog)
+//        SheetDialogFactory.initialize(this, R.layout.view_bottomsheetdialog)
+        fullSheetDialog = SheetDialogFactory.create(this, R.layout.view_bottomsheetdialog)
     }
 
     override fun onClick(v: View) {
-        SheetDialogHelper.show()
+        if (!fullSheetDialog.isShowing) fullSheetDialog.show()
     }
 
 }

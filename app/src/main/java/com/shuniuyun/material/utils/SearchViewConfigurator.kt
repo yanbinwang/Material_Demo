@@ -22,12 +22,13 @@ import com.shuniuyun.material.R
  *  android:theme="@style/searchStyle" />
  */
 @SuppressLint("CutPasteId")
-object SearchViewHelper {
-    fun initialize(searchView: SearchView) {
+object SearchViewConfigurator {
+
+    fun configure(searchView: SearchView) {
         val context = searchView.context
         searchView.apply {
-            //文字大小
-            val textView = searchView.findViewById(R.id.search_src_text) as SearchView.SearchAutoComplete
+            // 文字大小
+            val textView: SearchView.SearchAutoComplete = searchView.findViewById(R.id.search_src_text)
             textView.textSize = 12f
             //搜索图标是否显示在搜索框内
             setIconifiedByDefault(true)
@@ -38,13 +39,13 @@ object SearchViewHelper {
             //设置提示词
             queryHint = "请输入关键字"
         }
-        //设置输入框文字颜色
-        val editText = searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
+        // 设置输入框文字颜色
+        val editText: EditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text)
         editText.apply {
             setHintTextColor(ContextCompat.getColor(context, R.color.textWhite))
             setTextColor(ContextCompat.getColor(context, R.color.textWhite))
             setOnEditorActionListener { _, actionId, _ ->
-                //让键盘的回车键设置成搜索
+                // 让键盘的回车键设置成搜索
                 searchView.imeOptions = EditorInfo.IME_ACTION_SEARCH
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                     Toast.makeText(context, editText.text, Toast.LENGTH_SHORT).show()

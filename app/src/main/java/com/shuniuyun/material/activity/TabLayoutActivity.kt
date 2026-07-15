@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout.GRAVITY_FILL
 import com.google.android.material.tabs.TabLayout.OVER_SCROLL_NEVER
 import com.shuniuyun.material.R
 import com.shuniuyun.material.adapter.TabLayoutPagerAdapter
-import com.shuniuyun.material.utils.SearchViewHelper
+import com.shuniuyun.material.utils.SearchViewConfigurator
 import com.shuniuyun.material.utils.TabLayoutHelper
 
 /**
@@ -80,7 +80,7 @@ class TabLayoutActivity : AppCompatActivity() {
      */
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        SearchViewHelper.initialize((menu.findItem(R.id.action_search).actionView as SearchView))
+        SearchViewConfigurator.configure((menu.findItem(R.id.action_search).actionView as SearchView))
         return true
     }
 
